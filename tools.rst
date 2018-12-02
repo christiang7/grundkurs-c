@@ -12,7 +12,7 @@ unmittelbar mittels :ref:`apt <gwl:apt>` installieren:
 
     aptitude install astyle cdecl cflow doxygen gdb graphviz splint valgrind
 
-Anschließend können die jeweilgen Programme mittels einer :ref:`Shell
+Anschließend können die jeweiligen Programme mittels einer :ref:`Shell
 <gwl:Shell>` im Projekt-Verzeichnis aufgerufen beziehungsweise auf
 Quellcode-Dateien angewendet werden.
 
@@ -32,19 +32,19 @@ Form zu bringen. Die Syntax dafür lautet:
 Als Option kann mittels ``-A1`` bis ``-A12`` ein gewünschter Code-Style
 angegeben werden. Eine Übersicht über die möglichen Style-Varianten ist in der
 `Dokumentation
-<http://astyle.sourceforge.net/astyle.html#_Bracket_Style_Options>`_ des
+<http://astyle.sourceforge.net/astyle.html#_Brace_Style_Options>`_ des
 Programms zu finden. In den Beispielen dieses Tutorials wird der Codestyle
 "Allman" (Option ``-A1``) verwendet.
 
 Um beispielsweise alle ``c``-Dateien eines Verzeichnisses mittels ``astyle`` in
-den gewuenschten Code-Style zu bringen, kann folgendes Mini-Skript verwendet
+den gewünschten Code-Style zu bringen, kann folgendes Mini-Skript verwendet
 werden (die existierenden Dateien werden dabei ueberschrieben, bei Bedarf vorher
 Sicherheitskopie anlegen!):
 
 .. code-block:: bash
 
     for i in *.c ; \
-    do astyle -A1 < $i > $(basename $i).tmp && mv $(basename $i).tmp $i; \ 
+    do astyle -A1 < $i > $(basename $i).tmp && mv $(basename $i).tmp $i; \
     done
 
 
@@ -114,9 +114,9 @@ Die Syntax von ``cflow`` lautet:
 ``doxygen`` -- Dokumentations-Generator
 ---------------------------------------
 
-Mittels doxygen kann eine Dokumentation eines C-Projekts erzeugt werden, ohne
-dass innerhalb der Code-Dateien irgendeine Markup-Sprache verwendet werden muss.
-Dafür werden beispielsweise Übersichts- und Strukturdiagramme automatisch
+Mittels ``doxygen`` kann eine Dokumentation eines C-Projekts erzeugt werden,
+ohne dass innerhalb der Code-Dateien irgendeine Markup-Sprache verwendet werden
+muss. Dafür werden beispielsweise Übersichts- und Strukturdiagramme automatisch
 erzeugt, sofern auch das Programm ``graphviz`` installiert ist.
 
 Um eine Dokumentation mit Doxygen zu erstellen, wechselt man in das
@@ -133,9 +133,9 @@ Projektverzeichnis einen neuen Unterordner erstellen.
 
 Als Optionen zur Erzeugung von C-Code-Übersichten halte ich für sinnvoll:
 
-.. list-table:: 
+.. list-table::
     :name: tab-optionen-oxygen
-    :widths: 30 50 
+    :widths: 30 50
 
     * - Option in der Doxyfile
       - Beschreibung
@@ -146,11 +146,11 @@ Als Optionen zur Erzeugung von C-Code-Übersichten halte ich für sinnvoll:
     * - ``OUTPUT_LANGUAGE = German``
       - Sprache auswählen
     * - ``EXTRACT_ALL = YES``
-      - Alle Informationen des Quellcodes verwenden 
-    * - ``SOURCE_BROWSER = YES`` 	
+      - Alle Informationen des Quellcodes verwenden
+    * - ``SOURCE_BROWSER = YES``
       - Immer Links zu den entsprechenden Funktionen und Dateien erzeugen
-    * - ``HAVE_DOT = YES`` 	
-      - Nützliche Aufrufdiagramme mittels ``graphviz`` erzeugen 
+    * - ``HAVE_DOT = YES``
+      - Nützliche Aufrufdiagramme mittels ``graphviz`` erzeugen
     * - ``CALL_GRAPH = YES``
       - Funktionsaufrufe als Graphen erzeugen
     * - ``CALLER_GRAPH = YES``
@@ -161,16 +161,16 @@ Als Optionen zur Erzeugung von C-Code-Übersichten halte ich für sinnvoll:
 Nach dem Anpassen der ``Doxyfile`` muss im Projektpfad nur ``doxygen`` ohne
 weiteren Argumente aufgerufen werden, um die Dokumentation zu erstellen und im
 ``doxygen``-Unterverzeichnis abzulegen. Anschließend kann man die Indexdatei
-``./doxygen/html/index.html`` mit Firefox oder einem anderen Webbroswer öffnen.
+``./doxygen/html/index.html`` mit Firefox oder einem anderen Webbrowser öffnen.
 
-..  * - CLASS_DIAGRAMS 	
+..  * - CLASS_DIAGRAMS
 ..  Create class diagrams and inheritance graphs
 ..  CALL_GRAPH 	Make a call graph following all function calls
 ..  CALLER_GRAPH 	Output a graph of the caller dependencies
 
 ..  The option HAVE_DOT is the most important one because it’s what allows
 ..  Doxygen to generate the most useful output for the code spelunker, including
-..  class, collaboration, call, and caller graphs. 
+..  class, collaboration, call, and caller graphs.
 
 .. index:: gdb, Debugger
 .. _gdb:
@@ -181,7 +181,7 @@ weiteren Argumente aufgerufen werden, um die Dokumentation zu erstellen und im
 Fehler übersieht man gerne. Bei der Fehlersuche in C-Code kann der Debugger
 ``gdb`` eingesetzt werden, um das Verhalten eines Programms schrittweise zu
 überprüfen sowie Teile des Quellcodes, die als Fehlerquelle in Frage kommen,
-näher eingrenzen zu könnnen. 
+näher eingrenzen zu können.
 
 Um den ``gdb``-Debugger nutzen zu können, muss das zu untersuchende Programm mit
 der Option ``-g`` oder ``-ggdb`` compiliert werden, um für den Debugger
@@ -193,7 +193,7 @@ relevante Informationen zu generieren.
     gcc -ggdb -o myprogram myprogram.c
 
 Die Option ``-ggdb`` erzeugt ausführlichere, auf ``gdb`` zugeschnittene
-Informationen und dürfte in den meisten Fällen zu bevorzugen sein. 
+Informationen und dürfte in den meisten Fällen zu bevorzugen sein.
 
 Anschließend kann das compilierte Programm mit ``gdb`` geladen werden: [#]_
 
@@ -209,18 +209,18 @@ würde. Das Programm kann dabei abstürzen, wobei eine entsprechende
 Fehlermeldung und die für den Absturz relevante Code-Zeile angezeigt wird, oder
 (anscheinend) fehlerfrei durchlaufen.
 
-Wird ein Fehler angezeigt, beispielsweise eine "Arithmetic exeption", wenn
+Wird ein Fehler angezeigt, beispielsweise eine "Arithmetic exception", wenn
 versucht wird durch Null zu dividieren, so kann mittels ``print varname`` der
 Wert der angegebenen Variable zu diesem Zeitpunkt ausgegeben werden.
 
-.. rubric:: Verwendung von Breakpoints 
+.. rubric:: Verwendung von Breakpoints
 
 Um sich den Programmablauf im Detail anzuschauen, können mit ``break`` (oder
 kurz: ``b``) so genannte "Breakpoints" gesetzt werden. An diesen Stellen stoppt
 das Programm, wenn es mit ``run`` gestartet wird, automatisch. Die Breakpoints
 werden von ``gdb`` automatisch ausgewählt, beispielsweise werden sie vor
 Funktionsaufrufen gesetzt, um mittels ``print`` die Werte der übergebenen
-Variablen prüfen zu können. 
+Variablen prüfen zu können.
 
 Mittels eines Aufrufs von ``break num`` kann auch eine weiterer Breakpoint
 unmittelbar vor der Code-Zeile ``num`` manuell gesetzt werden. Ist in dem
@@ -236,7 +236,7 @@ Alternativ kann ``next`` (oder kurz: ``n``) beziehungsweise ``step`` (oder kurz:
 auszuführen. Der Unterschied zwischen ``next`` und ``step`` liegt darin, dass
 ``next`` die nächste Code-Zeile als eine einzige Anweisung ausführt, während
 ``step`` im Falle eines Funktionsaufrufs den Code der Funktion zeilenweise
-durchläuft. 
+durchläuft.
 
 Drückt man in ``gdb`` die Enter-Taste, so wird die unmittelbar vorher
 gegebene Anweisung erneut ausgeführt. Dies kann insbesondere in Verbindung mit
@@ -267,19 +267,19 @@ zu wissen, wie das Programm zur fehlerhaften Zeile gelangt ist. Dies kann in
 ``gdb`` mittels einer Eingabe von ``backtrace`` (oder kurz: ``bt``) geprüft
 werden. Ein solcher Backtrace gibt in umgekehrter Reihenfolge an, durch welche
 Funktionsaufruf das Programm an die Fehlerstelle gelangt ist. Somit können
-beim nächsten Durchlauf von ``gdb`` gezielt Brakepoints gesetzt bzw.
+beim nächsten Durchlauf von ``gdb`` gezielt Breakpoints gesetzt bzw.
 Variablenwerte überprüft werden.
 
 In sehr verschachtelten Programmen können mittels ``backtrace n`` nur die
 "inneren" :math:`n` Frames um die Fehlerstelle herum angezeigt werden, mittels
-``backtrace -n`` die :math:`n` äußeren Frames. 
+``backtrace -n`` die :math:`n` äußeren Frames.
 
 
 .. rubric:: ``ddd`` als graphisches Frontend für ``gdb``
 
 Möchte man ``gdb`` mit einer graphischen Oberfläche nutzen, so können
 optional die Pakete ``ddd`` und ``xterm`` via :ref:`apt <apt>` installiert
-werden: 
+werden:
 
 .. code-block:: bash
 
@@ -352,7 +352,7 @@ werden, um die für ``gprof`` relevante Datei ``gmon.out`` zu erzeugen:
 
 .. code-block:: bash
 
-    gcc -o gprof_test -pg gprof_test.c 
+    gcc -o gprof_test -pg gprof_test.c
 
     ./gprof_test
 
@@ -370,18 +370,18 @@ auf ein Minimum reduziert:
 
     # Ergebnis:
     # Flat profile:
-    # 
+    #
     # Each sample counts as 0.01 seconds.
-    #   %   cumulative   self              self     total           
-    #  time   seconds   seconds    calls   s/call   s/call  name    
+    #   %   cumulative   self              self     total
+    #  time   seconds   seconds    calls   s/call   s/call  name
     #  67.28      4.89     4.89        1     4.89     4.89  func_2
     #  33.71      7.34     2.45        1     2.45     2.45  func_1
     #   0.28      7.36     0.02                             main
 
 Bei dieser Ausgabe sieht man auf den ersten Blick, welche Funktion im Laufe des
-Programms am meisten Zeit benötigt bzw. wieviel Zeit sie je Aufruf braucht.
-Wird anstelle der Option ``-p`` die Option ``-P`` verwendet, so wird neben
-dieser Aufgegliederung angezeigt, an welcher Stelle eine Funktion aufgerufen
+Programms am meisten Zeit benötigt beziehungsweise wie viel Zeit sie je Aufruf
+braucht. Wird anstelle der Option ``-p`` die Option ``-P`` verwendet, so wird
+neben dieser Aufgliederung angezeigt, an welcher Stelle eine Funktion aufgerufen
 wird:
 
 .. code-block:: bash
@@ -390,10 +390,10 @@ wird:
 
     # Ergebnis:
     # 			Call graph
-    # 
-    # 
+    #
+    #
     # granularity: each sample hit covers 2 byte(s) for 0.14% of 7.36 seconds
-    # 
+    #
     # index % time    self  children    called     name
     #                                                  <spontaneous>
     # [1]    100.0    0.02    7.34                 main [1]
@@ -406,16 +406,16 @@ wird:
     #                 2.45    0.00       1/1           main [1]
     # [3]     33.3    2.45    0.00       1         func_1 [3]
     # -----------------------------------------------
-    # 
-    # 
+    #
+    #
     # Index by function name
-    # 
+    #
     #    [3] func_1                  [2] func_2                  [1] main
 
 Unmittelbar im Anschluss an die Optionen ``-p`` oder ``-P`` kann auch ein
 Funktionsname ausgegeben werden, um die Ausgabe von ``gprof`` auf die angegebene
 Funktion zu beschränken; zudem kann mittels der Option ``-a`` die Aufgabe auf
-alle nicht als statisch (privat) deklarierten Funktionen beschränkt werden. 
+alle nicht als statisch (privat) deklarierten Funktionen beschränkt werden.
 
 
 ..  http://www.stack.nl/~dimitri/doxygen/examples/diagrams/html/diagrams__d_8h.html
@@ -440,7 +440,7 @@ Funktionsweise von ``make`` ist unter :ref:`Linux und Open Source: Makefiles
 
 Wendet man den Syntax-Prüfer ``lint`` oder die verbesserte Variante ``splint``
 auf eine C-Datei an, so reklamiert dieser nicht nur Fehler, sondern auch
-Stilmängel. 
+Stilmängel.
 
 .. code-block:: bash
 
@@ -473,7 +473,7 @@ bestimmen sollen:
 
     #define N 10000
 
-    int main() 
+    int main()
     {
         int num, factor;
         int is_prim;
@@ -486,8 +486,8 @@ bestimmen sollen:
             {
                 if (num % factor == 0)              // Test, ob num den Faktor factor enthält
                 {
-                    if(num == factor)               // num ist genau dann Primzahl, wenn sie 
-                        is_prim = 1;                // nur sich selbst als Faktor enthält    
+                    if(num == factor)               // num ist genau dann Primzahl, wenn sie
+                        is_prim = 1;                // nur sich selbst als Faktor enthält
                     else
                         break;                      // sonst nicht
                 }
@@ -538,26 +538,26 @@ getestet werden: [#]_
         int num = 1;
         int factor_1, factor_2;
         int numbers[N];
-        
+
         for (numbers[1] = 1; num < N; num++)        // Alle Zahlen zunächst
             numbers[num] = 1;                       // als Primzahlen vermuten
 
-        for (factor_1 = 2; factor_1 < N/2; factor_1++) 
+        for (factor_1 = 2; factor_1 < N/2; factor_1++)
         {
-            for (factor_2 = 2; factor_2 <= N / factor_1; factor_2++) 
+            for (factor_2 = 2; factor_2 <= N / factor_1; factor_2++)
             {
                 numbers[factor_1 * factor_2] = 0;   // Alle möglichen Produkte
-            }                                       // aus factor_1 und factor_2 
+            }                                       // aus factor_1 und factor_2
                                                     // sind keine Primzahlen
-        }                                           
-        
-        for (num = 1; num <= N; num++)              
+        }
+
+        for (num = 1; num <= N; num++)
         {
-            if (numbers[num] == 1)                  // Jede verbleibende Zahl 1 
-            {                                       // entspricht einer Primzahl 
+            if (numbers[num] == 1)                  // Jede verbleibende Zahl 1
+            {                                       // entspricht einer Primzahl
                 printf("%d ", num);                 // Alle Primzahlen ausgeben
             }
-        } 
+        }
         printf("\n");
         return 0;
     }
@@ -581,7 +581,7 @@ wesentlich deutlicher, wenn man in den Quelldateien den Wert ``N`` statt auf
 Algorithmus auf meinem Rechner erst nach :math:`\unit[14.397]{s}` (!!) fertig,
 während der zweite nur :math:`\unit[0,032]{s}` benötigt.
 
-    
+
 .. index:: valgrind
 .. _valgrind:
 

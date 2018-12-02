@@ -4,6 +4,7 @@ Operatoren und Funktionen
 =========================
 
 .. index:: Operator
+.. _Operator:
 .. _Operatoren:
 
 Operatoren
@@ -36,12 +37,12 @@ oder Ausdrücke zu einem neuen Ergebnis verknüpft. Als Einziges ist die
 Division durch Null nicht erlaubt, sie führt zu Fehlermeldungen beim
 Compilieren oder kann das Abstürzen des Programms zur Folge haben.
 Neben den vier Operatoren für die Grundrechenarten existiert zusätzlich der
-Modulo-Operator ``%``, der den ganzzahligen Divisionsrest angibt; er liefert
+Modulo-Operator ``%``, der den ganzzahligen Divisions-Rest angibt; er liefert
 somit stets einen Wert vom Typ ``int`` als Ergebnis.
 
-.. list-table:: 
+.. list-table::
     :name: tab-mathematische-operatoren
-    :widths: 20 50 
+    :widths: 20 50
 
     * - Operator
       - Beschreibung
@@ -65,8 +66,8 @@ Inkrement-Operator ``++`` erhöht den Wert der Variablen um ``1``, der
 Dekrement-Operator ``--`` erniedrigt den Wert der Variablen um ``1``.
 Beide Operatoren werden üblicherweise verwendet, um beispielsweise in
 :ref:`Schleifen <Schleifen>` den Wert einer Zählvariablen schrittweise um Eins
-zu erhöhen bzw. erniedrigen und dabei den Variablenwert mittels des
-Zuweisungsoperators ``=`` einer anderen Variablen zuzuweisen: 
+zu erhöhen beziehungsweise erniedrigen und dabei den Variablenwert mittels des
+Zuweisungsoperators ``=`` einer anderen Variablen zuzuweisen:
 
 .. code-block:: c
 
@@ -78,27 +79,28 @@ Zuweisungsoperators ``=`` einer anderen Variablen zuzuweisen:
 
 Wie das obige Beispiel zeigt, ist es bei der Anwendung der Operatoren ``++`` und
 ``--`` von Bedeutung, ob der Operator vor oder nach der jeweiligen Variablen
-steht; im ersten Fall wird die Variable erst inkrementiert bzw. dekrementiert
-und anschließend zugewiesen, im zweiten Fall ist es umgekehrt.
+steht; im ersten Fall wird die Variable erst inkrementiert beziehungsweise
+dekrementiert und anschließend zugewiesen, im zweiten Fall ist es umgekehrt.
 
 Die Operatoren ``++`` und ``--`` haben für :ref:`Zeiger auf Felder <Zeiger auf
 Felder>` eine eigene Bedeutung: Sie erhöhen den Wert des Zeigers nicht um
 :math:`1`, sondern um die Länge des Datentyps, der in dem Array gespeichert
-ist, also beispielsweise um ``size(int)`` für ein Array mit ``int``-Variablen. 
+ist, also beispielsweise um ``size(int)`` für ein Array mit ``int``-Variablen.
 Somit können in Schleifen auch Felder mit dem Inkrement- bzw.
 Dekrement-Operator durchlaufen werden.
 
+.. _Zuweisungsoperator:
 .. _Zuweisungsoperatoren:
 
 .. rubric:: Zuweisungsoperatoren
 
 Der wichtigste Zuweisungsoperator ist das Istgleich-Zeichen ``=``: Es weist den
-Wert des Ausdrucks, der rechts des Istgleich-Zeichnes steht, der links stehenden
+Wert des Ausdrucks, der rechts des Istgleich-Zeichens steht, der links stehenden
 Variablen zu.
 
-.. list-table:: 
+.. list-table::
     :name: tab-zuweisungsoperatoren
-    :widths: 20 50 
+    :widths: 20 50
 
     * - Operator
       - Beschreibung
@@ -107,7 +109,7 @@ Variablen zu.
     * - ``+=``
       - Erhöhung einer Variablen (um Term auf der rechten Seite)
     * - ``-=``
-      - Reduzierung einer Variablen  
+      - Reduzierung einer Variablen
     * - ``*=``
       - Vervielfachung einer Variablen
     * - ``/=``
@@ -131,14 +133,14 @@ Ist der Vergleich wahr, so liefern sie "wahr" als Ergebnis zurück, in C also
 einen von Null verschiedenen Wert. Ist im umgekehrten Fall der Vergleich nicht
 wahr, so wird als Ergebnis "falsch" (also der Wert Null) zurück geliefert.
 
-.. list-table:: 
+.. list-table::
     :name: tab-vergleichssoperatoren
-    :widths: 20 50 
+    :widths: 20 50
 
     * - Operator
       - Beschreibung
     * - ``==``
-      - Test auf Wertgleichheit 
+      - Test auf Wertgleichheit
     * - ``!=``
       - Test auf Ungleichheit
     * - ``<``
@@ -162,9 +164,9 @@ mehrere Ausdrücke mittels logischer Operatoren zu einem Gesamt-Ausdruck
 kombinieren. Die jeweiligen Symbole für die logischen Verknüpfungen Und, Oder
 und Nicht sind in der folgenden Tabelle aufgelistet.
 
-.. list-table:: 
+.. list-table::
     :name: tab-logische-operatoren
-    :widths: 20 50 
+    :widths: 20 50
 
     * - Operator
       - Beschreibung
@@ -178,7 +180,7 @@ und Nicht sind in der folgenden Tabelle aufgelistet.
 Das ``!``-Zeichen als logisches Nicht bezieht sich auf den unmittelbar rechts
 stehenden Ausdruck und kehrt dabei den Wahrheitswert des Ausdrucks um. Die
 anderen beiden Operatoren ``&&`` und ``||`` verknüpfen den unmittelbar links
-und den unmittelbar rechts stehenden Ausdruck zu einer Gesamtaussage. Eine
+und den unmittelbar rechts stehenden Ausdruck zu einer Gesamt-Aussage. Eine
 Und-Verknüpfung ist genau dann wahr, wenn beide Teil-Ausdrücke wahr sind, eine
 Oder-Verknüpfung ist wahr, wenn mindestens einer der beiden Ausdrücke wahr
 ist.
@@ -187,11 +189,12 @@ Zur besseren Lesbarkeit sowie zur Vermeidung von Fehlern ist es empfehlenswert,
 die durch logische Ausdrücke verknüpften Aussagen stets in runde Klammern zu
 setzen, also beispielsweise ``(ausdruck_1 && ausdruck_2)`` zu schreiben.
 
-.. _Der Bedingungsoperator:
+.. _Bedingungsoperator:
+.. _Bedingungs-Operator:
 
-.. rubric:: Der Bedingungsoperator
+.. rubric:: Der Bedingungs-Operator
 
-Der Bedingungsoperator ist der einzige Operator in C, der drei Ausdrücke
+Der Bedingungs-Operator ist der einzige Operator in C, der drei Ausdrücke
 miteinander verbindet. Er hat folgenden Aufbau:
 
 .. code-block:: c
@@ -201,7 +204,7 @@ miteinander verbindet. Er hat folgenden Aufbau:
 Wenn der Bedingungs-Ausdruck wahr ist, also einen Wert ungleich Null als
 Ergebnis liefert, so wird ``anweisung1`` ausgeführt, ist der
 Bedingungs-Ausdruck falsch, so wird ``anweisung2`` ausgeführt. Beim
-Bedingungsoperator handelt es sich somit um eine sehr kurze Schreibform einer
+Bedingungs-Operator handelt es sich somit um eine sehr kurze Schreibform einer
 :ref:`if-else-Anweisung <Bedingte Anweisungen>`. Er kann unter anderem bei der
 Zuweisung von Werten eingesetzt werden, um beispielsweise einer neuen Variablen
 den größeren Wert zweier anderer Variablen zuzuweisen:
@@ -212,6 +215,7 @@ den größeren Wert zweier anderer Variablen zuzuweisen:
     my_var = ( var_1 > var_2 ) ? var_1 : var_2;
 
 .. index:: Cast-Operator
+.. _cast:
 .. _Cast-Operator:
 
 .. rubric:: Der Cast-Operator
@@ -249,26 +253,33 @@ Reservieren von Speicherplatz <Dynamische Speicherreservierung>` verwendet:
 Hierbei wird zunächst ein unbestimmter Zeiger auf den reservierten Speicherplatz
 erzeugt, der dann in einen Zeiger des gewünschten Typs umgewandelt wird.
 
-.. index:: sizeof()
-.. _Der Sizeof-Operator:
+.. index:: sizeof
+.. _sizeof:
+.. _Sizeof-Operator:
 
 .. rubric:: Der ``sizeof``-Operator
 
 Der ``sizeof``-Operator gibt die Größe des anschließend angegebenen Datentyps
-an; der Datentyp kann dabei wahlweise mit oder ohne Klammern angegeben werden.
-Beispielsweise würden ``sizeof float;`` oder ``sizeof(float);``, je nach
-Betriebsystem, beispielsweise den Wert ``4`` liefern.
+oder der anschließend angegebenen Variablen an. Die Angabe eines Datentyp muss
+dabei (wie beim :ref:`cast <cast>`-Operator) mit runden Klammern erfolgen; dies
+liegt daran, dass ansonsten nicht zwischen der Bezeichnung eines Datentyps und
+einem Variablennamen unterschieden werden kann. Beispielsweise würde also
+``sizeof (float);``, je nach Rechner-Architektur, den Wert ``4`` liefern. 
+Wendet man den ``sizeof``-Operator hingegen auf einen Variablennamen an, so
+können runde Klammern um den Variablennamen wahlweise gesetzt oder auch
+weggelassen werden.
 
 Mit dem ``sizeof``-Operator kann auch die Größe von :ref:`Feldern <Felder>` oder
 :ref:`Zusammengesetzten Datentypen <Strukturen>` ermittelt werden; sie
-entspricht der Summe der Größen aller darin vorkommenden Elemente.
+entspricht der Summe der Größen aller darin vorkommenden Elemente. 
 
-Das Ergebnis von ``sizeof()`` hat als Datentyp ``size_t``, was gleichbedeutend
+Das Ergebnis von ``sizeof`` hat als Datentyp ``size_t``, was gleichbedeutend
 mit ``unsigned int`` ist.
 
-.. _Der Kommaoperator:
+.. _Kommaoperator:
+.. _Komma-Operator:
 
-.. rubric:: Der Kommaoperator
+.. rubric:: Der Komma-Operator
 
 In C wird das Komma meist als Trennungszeichen für Funktionsargumente oder bei
 der Deklaration von Variablen verwendet. Es kann allerdings auch als Operator
@@ -288,17 +299,21 @@ welche Operatoren mit welcher Priorität ausgewertet werden (ebenso wie "Punkt
 vor Strich" in der Mathematik). Operatoren mit einem hohen Rang, die weiter oben
 in der Tabelle stehen, werden vor Operatoren mit einem niedrigen Rang
 ausgewertet. Haben zwei Operatoren den gleichen Rang, so entscheidet die so
-genannte Assoziativität, in welcher Reihenfolge ein Ausdruck auszuwerten ist: 
+genannte Assoziativität, in welcher Reihenfolge ein Ausdruck auszuwerten ist:
 
 * Bei der Assoziativität "von links nach rechts" wird der Ausdruck der
-  Reihe nach abgearbeitet, genau so, wie man den Code liest. 
-  
+  Reihe nach abgearbeitet, genau so, wie man den Code liest.
+
 * Bei der Assoziativität "von rechts nach links" wird zunächst der Ausdruck
   auf der rechten Seite des Operators ausgewertet, und erst anschließend der
   Operator auf den sich ergebenden Ausdruck angewendet.
 
+.. raw:: latex
 
-.. list-table:: 
+    \fontsize{10pt}{12.0pt}
+    \selectfont
+
+.. list-table::
     :name: tab-rangfolge-operatoren
     :widths: 10 60 20
 
@@ -308,41 +323,41 @@ genannte Assoziativität, in welcher Reihenfolge ein Ausdruck auszuwerten ist:
     * - 1
       - Funktionsaufruf ``()``, Array-Operator ``[]``, Strukturzugriff ``.`` und
         ``->``
-      - von links nach rechts 
+      - von links nach rechts
     * - 2
       - Adress-Operator ``&``, Inhalts-Operator ``*``, Vorzeichen-Operator ``+``
         und ``-``, Negation ``!``, Inkrement ``++`` und Dekrement ``--``,
-        Einerkomplement ``~``, ``sizeof``, ``(cast)`` 
+        Einerkomplement ``~``, ``sizeof``, ``(cast)``
       - von rechts nach links
     * - 3
       - Multiplikation ``*``, Division ``/``, Modulo ``%``
       - von links nach rechts
     * - 4
-      - Addition ``+``, Subtraktion ``-`` 
+      - Addition ``+``, Subtraktion ``-``
       - von links nach rechts
     * - 5
-      - Bitweises Schieben ``>>`` und ``<<`` 
+      - Bitweises Schieben ``>>`` und ``<<``
       - von links nach rechts
     * - 6
-      - Werte-Vergleich ``>`` ``<`` ``>=`` ``<=`` 
+      - Werte-Vergleich ``>`` ``<`` ``>=`` ``<=``
       - von links nach rechts
     * - 7
-      - Werte-Vergleich ``==`` und ``!=`` 
+      - Werte-Vergleich ``==`` und ``!=``
       - von links nach rechts
     * - 8
-      - Binäres Und ``&`` 
+      - Binäres Und ``&``
       - Von links nach rechts
     * - 9
       - Binäres Entweder-Oder ``^``
       - von links nach rechts
     * - 10
-      - Binäres Oder ``|`` 
+      - Binäres Oder ``|``
       - von links nach rechts
     * - 11
-      - Logisches Und ``&&`` 
+      - Logisches Und ``&&``
       - von links nach rechts
     * - 12
-      - Logisches Oder ``||`` 
+      - Logisches Oder ``||``
       - von links nach rechts
     * - 13
       - Bedingungsoperator ``?:``
@@ -355,6 +370,11 @@ genannte Assoziativität, in welcher Reihenfolge ein Ausdruck auszuwerten ist:
       - Sequenzoperator ``,``
       - von links nach rechts
 
+.. raw:: latex
+
+    \fontsize{12pt}{14.4pt}
+    \selectfont
+
 Enthält ein Ausdruck mehrere Operatoren mit gleicher Priorität, so werden die
 meisten Operatoren von links nach rechts ausgewertet. Beispielsweise haben im
 Ausdruck ``3 * 4 % 5 / 2`` alle Operatoren die gleiche Priorität, sie werden
@@ -362,9 +382,9 @@ gemäß ihrer Assoziativität von links nach rechts ausgewertet, so dass der
 Ausdruck formal mit ``((3 * 4) % 5) / 2`` identisch ist; somit ist das Ergebnis
 gleich ``(12 % 5) / 2 = 2 / 2 = 1``.
 
-Zur besseren Lesbarkeit können Teilaussagen die durch einen Operator mit höherer
-Priorität verbunden sind jederzeit, auch wenn es nicht notwendig ist, in runde
-Klammern gesetzt werden, ohne den Wert der Aussage zu verändern.
+Zur besseren Lesbarkeit können Teil-Aussagen die durch einen Operator mit
+höherer Priorität verbunden sind jederzeit, auch wenn es nicht notwendig ist, in
+runde Klammern gesetzt werden, ohne den Wert der Aussage zu verändern.
 
 
 .. index:: Funktion, Block
@@ -375,11 +395,11 @@ Funktionen
 
 Funktionen werden verwendet, um einzelne, durch geschweifte Klammern begrenzte
 Code-Blöcke mit einem Namen zu versehen. Damit können Funktionen an beliebigen
-anderen Stellen im Programm aufgerufen werden.  
+anderen Stellen im Programm aufgerufen werden.
 
 Eine Funktion kann somit als "Unterprogramm" angesehen werden, dem
 gegebenenfalls ein oder auch mehrere Werte als so genannte "Argumente" übergeben
-werden können und das je nach Definition einen Wert als Ergebnis zurück gibt. 
+werden können und das je nach Definition einen Wert als Ergebnis zurück gibt.
 
 Die Definition einer Funktion hat folgenden Aufbau:
 
@@ -396,7 +416,7 @@ beispielsweise ``int`` für ein ganzzahliges Ergebnis oder ``char *`` für eine
 Zeichenkette. Liefert die Funktion keinen Wert zurück, wird ``void`` als
 Rückgabe-Typ geschrieben. Die Argumentenliste der Funktion kann entweder leer
 sein oder eine beliebige Anzahl an zu übergebenden Argumenten beinhalten, wobei
-jedes Argument aus einem Argument-Typ und einem Argument-Namen besteht. 
+jedes Argument aus einem Argument-Typ und einem Argument-Namen besteht.
 Beim Aufruf der Funktion müssen die Datentypen der übergebenen Werte mit denen
 der bei der Deklaration angegebenen Argumentliste übereinstimmen. [#]_
 
@@ -441,7 +461,7 @@ erfolgt dann üblicherweise nach der Definition der Funktion ``main()``.
 ..  alle Prototypen an einer Stelle anzugeben.
 
 
-Um eine Funktion aufzurufen, wird der Name der Funktion in Kombination mit 
+Um eine Funktion aufzurufen, wird der Name der Funktion in Kombination mit
 einer Argumentliste in runden Klammern angegeben:
 
 .. code-block:: c
@@ -470,7 +490,7 @@ nach Fehlern der zu hinterfragende Code-Bereich schneller eingegrenzt werden.
 In C werden alle Argumente standardmäßig "by Value" übergeben, das heißt, dass
 die übergebenen Werte beim Funktionsaufruf kopiert werden, und innerhalb der
 Funktion mit lokalen Kopien der Werte gearbeitet wird. Eine Funktion kann
-hierbei die Originalvariablen nicht verändern. 
+hierbei die Originalvariable nicht verändern.
 
 .. index:: Call by Reference
 
@@ -480,7 +500,7 @@ werden. Eine derartige Übergabe wird als "Call by Reference" bezeichnet:
 Anstelle der Variablen wird ein :ref:`Zeiger <Zeiger>` auf die Variable als
 Argument übergeben. Ändert die Funktion den Wert der Speicherstelle, auf die der
 Pointer zeigt, so wird, wenn der Variablenwert erneut abgerufen wird, die
-Veränderung auch im restlichen Programmteil festgestellt. 
+Veränderung auch im restlichen Programmteil festgestellt.
 
 Komplexe Datentypen, beispielsweise :ref:`Strukturen <Strukturen>`, werden fast
 nie direkt, sondern meistens mittels eines Zeigers an eine Funktion übergeben;
@@ -524,12 +544,12 @@ Rekursion. Das wohl bekannteste Beispiel einer rekursiven Funktion ist die so
 genannte Fakultät :math:`x!`:
 
 .. math::
-    
-    x! = x \cdot (x - 1)  \cdot (x-2) \cdot \ldots \cdot 2 \cdot 1 
+
+    x! = x \cdot (x - 1)  \cdot (x-2) \cdot \ldots \cdot 2 \cdot 1
 
 Diese mathematische Funktion, die für positive ganzzahlige Werte definiert ist,
 kann mittels einer C-Funktion für jeden beliebigen Wert :math:`x` rekursiv
-mittels :math:`x! = x \cdot (x-1)!` berechnet werden: 
+mittels :math:`x! = x \cdot (x-1)!` berechnet werden:
 
 .. code-block:: c
 
@@ -567,7 +587,7 @@ berechnet werden müssen:
         int i;
         int result = 1;
 
-        for (i=1; i<=n; i++) 
+        for (i=1; i<=n; i++)
         {
             ergebnis *= i;
         }
@@ -591,11 +611,11 @@ auskommt, bei großen Datenmengen weit überlegen.
 
 .. [#] Streng genommen werden die Argumente bei der Definition als "formale
     Parameter" bezeichnet, die beim Aufruf übergebenen Werte hingegen werden
-    "aktuelle Parameter" oder schlicht Argumente genannt.  
+    "aktuelle Parameter" oder schlicht Argumente genannt.
 
 .. [#] Deklarationen von Funktionen sind für das Compilieren des Programms
     unerlässlich, da für jeden Funktionsaufruf geprüft wird, ob die Art und
-    Anzahl der übergebenen Argumente korrekt ist. 
+    Anzahl der übergebenen Argumente korrekt ist.
 
 .. [#] Eine Funktion sollte maximal 100 Zeilen umfassen. Die Hauptfunktion
     ``main()`` sollte nur Unterfunktionen aufrufen, um möglichst übersichtlich

@@ -1,4 +1,4 @@
-.. meta:: 
+.. meta::
     :description: Curses
     :keywords:  Curses, NCurses, Tutorial, Howto, Einführung, Text User Interface
 
@@ -40,7 +40,7 @@ vorgefundenen Shell-Einstellungen wieder her. Da ``endwin()`` insgesamt
 zahlreiche Aufräumarbeiten übernimmt, sollte Curses stets mit dieser Funktion
 beendet werden.
 
-Ein minimalese Curses-Programm, das nur kurz einen leeren Bildschirm erzeugt,
+Ein minimales Curses-Programm, das nur kurz einen leeren Bildschirm erzeugt,
 auf diesem "Hallo Welt" ausgibt und sich nach kurzer Zeit selbst beendet, kann
 folgendermaßen aussehen:
 
@@ -59,7 +59,7 @@ folgendermaßen aussehen:
         endwin();
         return 0;
     }
-    
+
 In diesem Beispiel wurde zudem die Curses-Funktion ``napms()`` verwendet, die
 eine weitere Ausführung des Programms um die angegebene Anzahl in Millisekunden
 verzögert.
@@ -176,7 +176,7 @@ diese Einstellung, wie im folgenden Abschnitt beschrieben, deaktiviert werden.
 .. rubric:: Modifizierung der Ein- und Ausgabe
 
 In Curses gibt es folgende Funktionen, die das Verhalten des Programms
-hinsichtlich Eingabe und Ausgabe anzupassen: 
+hinsichtlich Eingabe und Ausgabe anzupassen:
 
 .. index:: raw(), cbreak()
 .. _raw und cbreak():
@@ -238,7 +238,7 @@ hinsichtlich Eingabe und Ausgabe anzupassen:
 * ``halfdelay(n)``:
 
   Mit dieser nur in Ausnahmefällen verwendeten Funktion kann festgelegt werden,
-  dass beim dem Einlesen eines Zeichens miitels :ref:`getch() <getch()>` oder
+  dass beim dem Einlesen eines Zeichens mittels :ref:`getch() <getch()>` oder
   einer Zeichenkette maximal :math:`n` Zehntel Sekunden gewartet wird. Wird in
   dieser Zeit kein Text eingegeben, so fährt das Programm fort. Dies kann
   beispielsweise für eine Timeout-Funktion bei einer Passwort-Eingabe verwendet
@@ -265,7 +265,7 @@ verknüpft: [#]_
     // Datei: curses-beispiel-3.c
 
     #include <ncurses.h>
-   
+
     int main()
     {
         int c;
@@ -363,7 +363,7 @@ folgende Funktionen:
   Mit ``deleteln()`` wird die Zeile an der Stelle des Cursors gelöscht; alle
   folgenden Zeilen werden dabei automatisch um eine Zeile nach oben verschoben.
 
-Möchte man an der gleichen Stelle am Bildschirm aufeinanderfolgend Textstellen
+Möchte man an der gleichen Stelle am Bildschirm aufeinander folgende Textstellen
 mit unterschiedlicher Länge ausgeben, so werden durch ``refresh();`` nur die
 jeweils neu darzustellenden Zeichen auf dem Bildschirm aktualisiert; wird
 an der gleichen Startpositiion zunächst eine lange und danach eine kurze
@@ -375,12 +375,12 @@ Um den Bildschirm zu säubern, gibt es daher in Curses folgende Funktionen:
 * ``clrtoeol()``
 
   Mit ``clrtoeol()`` werden alle Zeichen von der Cursor-Position aus bis zum
-  Ende der Zeile gelöscht ("clear to end of line"). 
+  Ende der Zeile gelöscht ("clear to end of line").
 
 * ``clrtobot()``
 
   Mit ``clrtobot()`` werden alle Zeilen von der Cursor-Position aus bis zum Ende
-  des Fensters gelöscht ("clear to bottom of window"). 
+  des Fensters gelöscht ("clear to bottom of window").
 
 * ``erase()`` und ``clear()``
 
@@ -428,26 +428,26 @@ Funktionen vorgenommen werden:
 Die obigen Funktionen wirken sich auf die weitere Darstellung aller
 Zeichenketten aus. Um den ausgegebenen Text wieder in "normaler" Form
 darzustellen, kann ``attrset(A_NORMAL)`` verwendet werden. Eine Übersicht aller
-Textattribute ist in der folgenden Tabelle zusammengestellt. 
+Textattribute ist in der folgenden Tabelle zusammengestellt.
 
-.. list-table:: 
+.. list-table::
     :name: tab-curses-text-attributes
-    :widths: 50 50 
+    :widths: 50 50
 
     * - ``A_NORMAL``
       - Normaler Text
-    * - ``A_BOLD`` 
-      - Text in Fettschrift und mit erhöhter Helligkeit 
-    * - ``A_DIM`` 
+    * - ``A_BOLD``
+      - Text in Fettschrift und mit erhöhter Helligkeit
+    * - ``A_DIM``
       - Text mit verringerter Helligkeit (wird nicht von jeder Shell
         unterstützt)
     * - ``A_REVERSE``
       - Text mit vertauschter Vorder- und Hintergrundfarbe
-    * - ``A_UNDERLINE`` 
-      - Unterstrichener Text 
-    * - ``A_BLINK`` 
+    * - ``A_UNDERLINE``
+      - Unterstrichener Text
+    * - ``A_BLINK``
       - Blinkender Text (wird nicht von jeder Shell unterstützt)
-    * - ``A_STANDOUT`` 
+    * - ``A_STANDOUT``
       - Hervorgehobener Text (entspricht meist ``A_REVERSE``)
 
 Um mehrere Attribute miteinander zu kombinieren, können diese entweder
@@ -468,17 +468,17 @@ mittels der Funktion ``start_color()`` freigeschaltet werden; dabei werden
 zugleich die in der folgenden Tabelle angegebenen Farbnamen als symbolische
 Konstanten definiert.
 
-.. list-table:: 
-    :name: tab-curses-farben 
+.. list-table::
+    :name: tab-curses-farben
     :widths: 50 50 50
 
-    * - Nummer 
+    * - Nummer
       - Name
       - Farbe
-    * - :math:`0` 
+    * - :math:`0`
       - ``COLOR_BLACK``
-      - Schwarz 
-    * - :math:`1` 
+      - Schwarz
+    * - :math:`1`
       - ``COLOR_RED``
       - Rot
     * - :math:`2`
@@ -520,12 +520,12 @@ Jedes so definierte Farbenpaar kann mittels ``attron()`` beziehungsweise
         printw("Kein farbiger Text moeglich!");
     else
         start_color();
-    
+
     init_pair(1, COLOR_YELLOW, COLOR_BLUE );
     attrset( COLOR_PAIR(1) );
-        
+
     printw("Farbiger Text, sofern moeglich!");
-    
+
 Neben der Angabe von ``COLOR_PAIR(n)``, die für das Farben-Paar mit der Nummer
 :math:`n` steht, können ebenfalls weitere Attribute mittels eines binärem Oders
 angegeben werden. Wird ein Farbenpaar mit dem Attribut ``A_BOLD`` kombiniert, so
@@ -633,7 +633,7 @@ Ein neues Unterfenster kann, ebenso wie mit :ref:`newwin() <newwin()>` ein neues
 Fenster erstellt wird, mittels ``subwin()`` erzeugt werden, wobei als erstes
 Argument der Name des übergeordneten Fensters und als weitere Argumente die
 Anzahl an Zeilen und Spalten sowie die Startposition der oberen linken Ecke
-angegeben werden: 
+angegeben werden:
 
 .. code-block:: c
 
@@ -671,7 +671,7 @@ Funktionen für Pads weitgehend mit den für normale Fenster identisch sind, ist
 ihre Größe nicht auf die Größe des Hauptfensters beschränkt; die maximale Größe
 eines Pads ist allerdings auf 32767 Zeilen beziehungsweise Spalten beschränkt.
 
-Ein neus Pad wird folgendermaßen erzeugt:
+Ein neues Pad wird folgendermaßen erzeugt:
 
 .. code-block:: c
 
@@ -737,7 +737,7 @@ kann somit nicht auf Pads angewendet werden. Ebenso sind die
 
 .. pechochar(): zeigt buchstaben direkt an, dabei kein prefresh() nötig.
 
-.. pnoutrefresh() and doupdate(): Effizientere Aktualisierungen 
+.. pnoutrefresh() and doupdate(): Effizientere Aktualisierungen
 
 .. wbgd(colorpair)
 
@@ -768,7 +768,7 @@ daher nicht innerhalb der gleichen Shell aufrufen und mit dem :ref:`gdb
   Programms auf den Bezeichner des zweiten Shell-Fensters festgelegt:
 
   .. code-block:: c
-  
+
       tty /dev/pts/23
 
   Nun kann ``run`` eingeben werden, um das Programm im Debugger ablaufen zu
@@ -781,9 +781,9 @@ daher nicht innerhalb der gleichen Shell aufrufen und mit dem :ref:`gdb
 .. only:: html
 
     .. rubric:: Anmerkungen:
-    
+
 .. [#] Eine "Spalte" in Curses der Breite eines Textzeichens; die meisten
-    Fenster haben daher mehr Spalten als Zeilen. 
+    Fenster haben daher mehr Spalten als Zeilen.
 
 .. [#] Für die Größe des Hauptfensters ``stdscr`` sind in Curses auch die
     Makros ``LINES`` und ``COLS`` definiert, die vom Compiler durch die beim
@@ -806,3 +806,5 @@ daher nicht innerhalb der gleichen Shell aufrufen und mit dem :ref:`gdb
 .. [#] Ein Pad kann ein Subpad, aber kein Unterfenster beinhalten. Man kann
     innerhalb eines Pads also mittels ``subpad()`` ein Subpad erzeugen, jedoch
     nicht mittels ``subwin()`` ein Unterfenster.
+
+

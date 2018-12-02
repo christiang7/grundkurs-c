@@ -5,7 +5,7 @@ Die C-Standardbibliothek
 ========================
 
 Im folgenden Abschnitt sind diejenigen C-Bibliotheken beschrieben, die jederzeit
-vom ``gcc``-Compiler gefunden werden und somit in C-Programme mittes
+vom ``gcc``-Compiler gefunden werden und somit in C-Programme mittels
 ``#include`` eingebunden werden können, ohne dass weitere Pfadanpassungen
 notwendig sind.
 
@@ -26,11 +26,11 @@ notwendig sind.
   keinen wahren (von Null verschiedenen) Wert, so bricht ``assert()`` das
   Programm ab und gibt auf dem ``stderr``-Kanal als Fehlermeldung aus, welche
   Zeile beziehungsweise notwendige Bedingung den Absturz verursacht hat.
-  
+
 .. index:: math.h
 .. _math.h:
 
-``math.h`` -- Mathematische Funktionen 
+``math.h`` -- Mathematische Funktionen
 ---------------------------------------
 
 
@@ -40,7 +40,7 @@ notwendig sind.
 * ``double sin(double x)``
 
     Gibt den :ref:`Sinus <gwm:Winkelfunktionen am Einheitskreis>`-Wert eines in :ref:`Radiant <gwm:Kreisbogen>`
-    angegebenen :math:`x`-Werts an. 
+    angegebenen :math:`x`-Werts an.
 
 .. index:: cos()
 .. _cos():
@@ -48,7 +48,7 @@ notwendig sind.
 * ``double cos(double x)``
 
     Gibt den :ref:`Cosinus <gwm:Winkelfunktionen am Einheitskreis>`-Wert eines in :ref:`Radiant <gwm:Kreisbogen>`
-    angegebenen :math:`x`-Werts an. 
+    angegebenen :math:`x`-Werts an.
 
 .. index:: tan()
 .. _tan():
@@ -56,7 +56,7 @@ notwendig sind.
 * ``double tan(double x)``
 
     Gibt den :ref:`Tangens <gwm:Winkelfunktionen am Einheitskreis>`-Wert eines in :ref:`Radiant <gwm:Kreisbogen>`
-    angegebenen :math:`x`-Werts an. 
+    angegebenen :math:`x`-Werts an.
 
 .. index:: asin()
 .. _asin():
@@ -129,7 +129,7 @@ notwendig sind.
 * ``double log10(double x)``
 
     Gibt den Wert des :ref:`Logarithmus <gwm:Logarithmusfunktionen>` zur Basis
-    :math:`10` an, wobei :math:`x > 0` gelten muss. 
+    :math:`10` an, wobei :math:`x > 0` gelten muss.
 
 .. index:: pow()
 .. _pow():
@@ -210,8 +210,8 @@ notwendig sind.
 .. index:: cmath.h
 .. _cmath.h:
 
-``cmath.h`` -- Mathematische Funktionen für komplexe Zahlen
------------------------------------------------------------
+``cmath.h`` -- Mathe-Funktionen für komplexe Zahlen
+---------------------------------------------------
 
 * ``double creal(double complex z)``
 
@@ -305,7 +305,7 @@ Bereichslänge angegeben werden.
     Vergleicht die ersten :math:`n` Zeichen des Arrays ``str_1`` mit dem Array
     ``str_2``; gibt als Ergebnis einen Wert :math:`<0` zurück falls ``str_1 <
     str_2`` ist, den Wert :math:`0` für ``str_1 == str_2``, oder einen Wert
-    :math:`>0` falls ``str_1 > str_2`` ist. 
+    :math:`>0` falls ``str_1 > str_2`` ist.
 
     Die Bereiche werden nach den ASCII-Codes der Anfangsbuchstaben verglichen,
     nicht lexikalisch.
@@ -374,7 +374,7 @@ Bereichslänge angegeben werden.
     Vergleicht die beiden Zeichenketten ``str_1`` und ``str_2`` miteinander;
     gibt als Ergebnis einen Wert :math:`<0` zurück falls ``str_1 < str_2`` ist,
     den Wert :math:`0` für ``str_1 == str_2``, oder einen Wert :math:`>0` falls
-    ``str_1 > str_2`` ist. 
+    ``str_1 > str_2`` ist.
 
     Die Zeichenketten werden nach den ASCII-Codes der Anfangsbuchstaben
     verglichen, nicht lexikalisch.
@@ -444,8 +444,8 @@ Bereichslänge angegeben werden.
 
     Gibt einen Zeiger auf erstes Vorkommen von der Zeichenkette ``str_2``
     innerhalb der Zeichenkette ``str_1`` als Ergebnis zurück, oder ``NULL``,
-    falls diese nicht vorkommt. 
-    
+    falls diese nicht vorkommt.
+
 ..  (Suchen eines Strings in anderem String)
 
 
@@ -484,7 +484,7 @@ Bereichslänge angegeben werden.
 
 Die Datei ``stdio.h`` definiert Typen und Funktionen zum Umgang mit Datenströmen
 ("Streams"). Ein Stream ist Quelle oder Ziel von Daten und wird mit einer Datei
-oder einem angeschlossenen Gerät verknüpft. 
+oder einem angeschlossenen Gerät verknüpft.
 
 Unter Windows muss zwischen Streams für binäre und für Textdateien
 unterschieden werden, unter Linux nicht. Ein Textstream ist eine Folge von
@@ -506,7 +506,7 @@ Wenn die Ausführung eines Programms beginnt, sind die drei Standard-Streams
 
 Die folgenden Funktionen beschäftigen sich mit Datei-Operationen. Der Typ
 ``size_t`` ist der vorzeichenlose, ganzzahlige Resultattyp des
-``sizeof``-Operators.
+:ref:`sizeof <sizeof>`-Operators.
 
 .. index:: fopen()
 .. _fopen():
@@ -514,18 +514,18 @@ Die folgenden Funktionen beschäftigen sich mit Datei-Operationen. Der Typ
 * ``FILE *fopen(const char *filename, const char *mode)``
 
     Öffnet die angegebene Datei; gibt als Ergebnis einen Datenstrom zurück,
-    oder ``NULL`` falls das Öffnen fehlschlägt. 
-    
+    oder ``NULL`` falls das Öffnen fehlschlägt.
+
     .. _mode:
 
-    Als Zugriffsmodus ``mode`` kann angegeben werden: 
+    Als Zugriffsmodus ``mode`` kann angegeben werden:
 
     - ``"r"``: Textdatei zum Lesen öffnen
     - ``"w"``: Textdatei zum Schreiben neu erzeugen (gegebenenfalls alten Inhalt
-      wegwerfen) 
-    - ``"a"``: Text anfügen; Datei zum Schreiben am Dateiende öffnen oder erzeugen 
-    - ``"r+"``: Textdatei zum Ändern öffnen (Lesen und Schreiben) 
-    - ``"w+"``: Textdatei zum Ändern erzeugen (gegebenenfalls alten Inhalt wegwerfen) 
+      wegwerfen)
+    - ``"a"``: Text anfügen; Datei zum Schreiben am Dateiende öffnen oder erzeugen
+    - ``"r+"``: Textdatei zum Ändern öffnen (Lesen und Schreiben)
+    - ``"w+"``: Textdatei zum Ändern erzeugen (gegebenenfalls alten Inhalt wegwerfen)
     - ``"a+"``: Datei neu erzeugen oder zum Ändern öffnen und Text anfügen
       (Schreiben am Ende)
 
@@ -536,8 +536,8 @@ Die folgenden Funktionen beschäftigen sich mit Datei-Operationen. Der Typ
 
     Öffnet die angegebene Datei für den angegebenen :ref:`Zugriffsmodus <mode>`
     und verknüpft den Datenstrom ``stream`` damit. Als Ergebnis wird ``stream``
-    zurück gegeben, oder ``Null`` falls ein Fehler auftritt. 
-    
+    zurück gegeben, oder ``Null`` falls ein Fehler auftritt.
+
     Mit ``freopen()`` ändert man normalerweise die Dateien, die mit ``stdin``,
     ``stdout`` oder ``stderr`` verknüpft sind.
 
@@ -549,8 +549,8 @@ Die folgenden Funktionen beschäftigen sich mit Datei-Operationen. Der Typ
     Sorgt bei einem Ausgabestrom dafür, dass gepufferte, aber noch nicht
     geschriebene Daten geschrieben werden; bei einem Eingabestrom ist der Effekt
     undefiniert. Die Funktion gibt normalerweise ``NULL`` als Ergebnis zurück,
-    oder ``EOF`` (Konstante mit Wert ``-1``), falls ein Schreibfehler auftritt. 
-  
+    oder ``EOF`` (Konstante mit Wert ``-1``), falls ein Schreibfehler auftritt.
+
     ``fflush(NULL)`` bezieht sich auf alle offenen Dateien.
 
 .. index:: feof()
@@ -572,9 +572,7 @@ Die folgenden Funktionen beschäftigen sich mit Datei-Operationen. Der Typ
     beispielsweise durch einen Fehler beim Lesen oder Schreiben verursacht wird.
     Die Funktion gibt normalerweise ``0`` als Ergebnis zurück, oder einen Wert
     ungleich Null, wenn das Fehler-Flag des File-Pointers gesetzt ist.
-    
 
-* ``int ferror(FILE *stream);``
 
 .. index:: fclose()
 .. _fclose():
@@ -620,12 +618,12 @@ Die folgenden Funktionen beschäftigen sich mit Datei-Operationen. Der Typ
 
     ``tmpnam(NULL)`` erzeugt eine Zeichenkette, die nicht der Name einer
     existierenden Datei ist, und gibt einen Zeiger auf einen internen
-    Vektor im statischen Speicherbereich als Ergebnis zurück. 
+    Vektor im statischen Speicherbereich als Ergebnis zurück.
 
     ``tmpnam(s)`` speichert die Zeichenkette in ``s`` und gibt ``s`` als
     Ergebnis zurück; in ``s`` müssen wenigstens ``L_tmpnam`` Zeichen abgelegt
-    werden können. 
-    
+    werden können.
+
     Bei jedem Aufruf erzeugt die Funktion einen anderen Namen; man kann
     höchstens von ``TMP_MAX`` verschiedenen Namen während der Ausführung des
     Programms ausgehen. Zu beachten ist, dass ein Name und keine Datei
@@ -644,7 +642,7 @@ Die folgenden Funktionen beschäftigen sich mit Datei-Operationen. Der Typ
     gepuffert, ``_IOLBF`` sorgt für zeilenweise Pufferung bei Textdateien und
     ``_IONBF`` verhindert Puffern. Wenn ``buf`` nicht gleich ``NULLi`` ist, wird
     ``buf`` als Puffer verwendet; andernfalls wird ein Puffer angelegt. ``size``
-    legt die Puffergröße fest. 
+    legt die Puffergröße fest.
 
     Bei einem Fehler gibt die Funktion einen von Null verschiedenen Wert zurück.
 
@@ -664,7 +662,7 @@ sind auf ``FILENAME_MAX Zeichen`` begrenzt, höchstens ``FOPEN_MAX`` Dateien
 können gleichzeitig offen sein.
 
 ..  Enthält mode nach dem ersten Zeichen noch b, also etwa "rb" oder "w+b",
-..  dann wird auf eine binäre Datei zugegriffen. 
+..  dann wird auf eine binäre Datei zugegriffen.
 
 .. rubric:: Aus- und Eingabe
 
@@ -704,8 +702,8 @@ können gleichzeitig offen sein.
 ..  .. index:: vprintf()
 ..  .. _vprintf():
 
-..  * | ``vprintf(const char *format, va_list arg)``, 
-..  | ``vfprintf(FILE *stream, const char *format, va_list arg)``, 
+..  * | ``vprintf(const char *format, va_list arg)``,
+..  | ``vfprintf(FILE *stream, const char *format, va_list arg)``,
 ..  | ``vsprintf(char *s, const char *format, va_list arg)``
 
 ..  Die Funktionen ``vprintf()``, ``vfprintf()`` und ``vsprintf()`` sind
@@ -717,7 +715,7 @@ können gleichzeitig offen sein.
 .. index:: stdlib.h
 .. _stdlib.h:
 
-``stdlib.h`` -- Hilfsfunktionen 
+``stdlib.h`` -- Hilfsfunktionen
 --------------------------------
 
 Die Definitionsdatei ``<stdlib.h>`` vereinbart Funktionen zur Umwandlung von
@@ -772,7 +770,7 @@ Zahlen, für Speicherverwaltung und ähnliche Aufgaben.
     eventuell nicht umgewandelten Rest der Zeichenkette bei ``*endp``, falls
     ``endp`` nicht ``NULL`` ist. Hat ``base`` einen Wert zwischen :math:`2` und
     :math:`36`, erfolgt die Umwandlung unter der Annahme, dass die Eingabe in
-    dieser Basis repräsentiert ist. 
+    dieser Basis repräsentiert ist.
 
     Hat ``base`` den Wert Null, wird als Basis :math:`8`, :math:`10` oder
     :math:`16` verwendet, je nach ``s``; eine führende Null bedeutet dabei oktal
@@ -830,12 +828,12 @@ Zahlen, für Speicherverwaltung und ähnliche Aufgaben.
 
 * ``void * realloc(void *p, size_t size)``
 
-    Ändert die Größe des Objekts, auf das der Pointer ``p`` zeigt, in ``size`` ab.
-    Bis zur kleineren der alten und neuen Größe bleibt der Inhalt unverändert.
-    Wird der Bereich für das Objekt größer, so ist der zusätzliche Bereich
-    uninitialisiert. ``realloc()`` liefert einen Zeiger auf den neuen Bereich oder
-    ``NULL``, wenn die Anforderung nicht erfüllt werden kann; in diesem Fall wird
-    der Inhalt nicht verändert.
+    Ändert die Größe des Objekts, auf das der Pointer ``p`` zeigt, in ``size``
+    ab. Bis zur kleineren der alten und neuen Größe bleibt der Inhalt
+    unverändert. Wird der Bereich für das Objekt größer, so ist der zusätzliche
+    Bereich nicht initialisiert. ``realloc()`` liefert einen Zeiger auf den
+    neuen Bereich oder ``NULL``, wenn die Anforderung nicht erfüllt werden kann;
+    in diesem Fall wird der Inhalt nicht verändert.
 
 .. index:: free()
 .. _free():
@@ -853,7 +851,7 @@ Zahlen, für Speicherverwaltung und ähnliche Aufgaben.
 * ``void abort(void)``
 
     Sorgt für eine anormale, sofortige Beendigung des Programms.
-   
+
 .. index:: exit()
 .. _exit():
 
@@ -885,7 +883,7 @@ Zahlen, für Speicherverwaltung und ähnliche Aufgaben.
     Gibt die Zeichenkette ``s`` an die Umgebung zur Ausführung. Hat ``s`` den
     Wert ``NULL``, so liefert ``system()`` einen von Null verschiedenen Wert,
     wenn es einen Kommandoprozessor gibt. Wenn ``s`` von ``NULL`` verschieden
-    ist, dann ist der Resultatwert implementierungsabhängig.
+    ist, dann ist der Resultatwert von der Implementierung abhängig.
 
 .. index:: getenv()
 .. _getenv():
@@ -906,7 +904,7 @@ Zahlen, für Speicherverwaltung und ähnliche Aufgaben.
     ``*key`` ist. Die Funktion ``cmp`` muss einen negativen Wert liefern, wenn ihr
     erstes Argument (der Suchschlüssel) kleiner als ihr zweites Argument (ein
     Tabelleneintrag) ist, Null, wenn beide gleich sind, und sonst einen positiven
-    Wert. 
+    Wert.
 
     Die Elemente des Arrays base müssen aufsteigend sortiert sein. In ``size``
     muss die Größe eines einzelnen Elements übergeben werden. ``bsearch()`` gibt
@@ -921,7 +919,7 @@ Zahlen, für Speicherverwaltung und ähnliche Aufgaben.
 
     Sortiert ein Array ``base[0]`` bis ``base[n-1]`` von Objekten der Größe
     ``size`` in aufsteigender Reihenfolge. Für die Vergleichsfunktion ``cmp`` gilt
-    das gleiche wie bei bsearch.
+    das gleiche wie bei ``bsearch()``.
 
 .. index:: abs()
 .. _abs():
@@ -968,9 +966,9 @@ tm`` enthält die Komponenten einer Kalenderzeit:
 
 .. code-block:: c
 
-    struct tm 
+    struct tm
     {
-        // Sekunden nach der vollen Minute (0, 61) 
+        // Sekunden nach der vollen Minute (0, 61)
         // (Die zusätzlich möglichen Sekunden sind Schaltsekunden)
         int tm_sec;
 
@@ -1009,8 +1007,8 @@ gilt, und negativ, wenn die Information nicht zur Verfügung steht.
 
     Gibt die Rechnerkern-Zeit an, die das Programm seit Beginn seiner Ausführung
     verbraucht hat, oder ``-1``, wenn diese Information nicht zur Verfügung
-    steht. 
-    
+    steht.
+
     ``clock()/CLOCKS_PER_SEC`` ist eine Zeit in Sekunden.
 
 .. index:: time()
@@ -1048,60 +1046,60 @@ gilt, und negativ, wenn die Information nicht zur Verfügung steht.
     ``fmt``, analog zu einem ``printf``-Format. Gewöhnliche Zeichen
     (insbesondere auch das abschließende ``\0``) werden nach ``s`` kopiert.
     Jedes ``%...`` wird gemäß der unten folgenden Liste ersetzt, wobei Werte
-    verwendet werden, die der lokalen Umgebung entsprechen. 
-  
+    verwendet werden, die der lokalen Umgebung entsprechen.
+
     Es werden höchstens ``smax`` Zeichen in der Zeichenkette ``s`` abgelegt. Als
     Ergebnis gibt ``strftime()`` die Anzahl der resultierenden Zeichen zurück, mit
     Ausnahme von ``\0``. Wenn mehr als ``smax`` Zeichen erzeugt wurden, gibt
     ``strftime`` den Wert Null als Ergebnis zurück.
-        
+
     Umwandlungszeichen für den Formatstring ``fmt``:
 
-    .. list-table:: 
+    .. list-table::
         :name: tab-strftime
-        :widths: 20 50 20 50 
-    
-        * - ``%a`` 
+        :widths: 20 50 20 50
+
+        * - ``%a``
           - abgekürzter Name des Wochentags.
-          - ``%A`` 
+          - ``%A``
           - voller Name des Wochentags.
-        * - ``%b`` 
+        * - ``%b``
           - abgekürzter Name des Monats.
-          - ``%B`` 
+          - ``%B``
           - voller Name des Monats.
-        * - ``%c`` 
+        * - ``%c``
           - lokale Darstellung von Datum und Zeit.
-          - ``%d`` 
+          - ``%d``
           - Tag im Monat (01 - 31).
-        * - ``%H`` 
+        * - ``%H``
           - Stunde (00 - 23).
-          - ``%I`` 
+          - ``%I``
           - Stunde (01 - 12).
-        * - ``%j`` 
+        * - ``%j``
           - Tag im Jahr (001 - 366).
-          - ``%m`` 
+          - ``%m``
           - Monat (01 - 12).
-        * - ``%M`` 
+        * - ``%M``
           - Minute (00 - 59).
-          - ``%p`` 
+          - ``%p``
           - lokales Äquivalent von AM oder PM.
-        * - ``%S`` 
+        * - ``%S``
           - Sekunde (00 - 61).
-          - ``%U`` 
+          - ``%U``
           - Woche im Jahr (Sonntag ist erster Tag) (00 - 53).
-        * - ``%w`` 
+        * - ``%w``
           - Wochentag (0 - 6, Sonntag ist 0).
-          - ``%W`` 
+          - ``%W``
           - Woche im Jahr (Montag ist erster Tag) (00 - 53).
-        * - ``%x`` 
+        * - ``%x``
           - lokale Darstellung des Datums.
-          - ``%X`` 
+          - ``%X``
           - lokale Darstellung der Zeit.
-        * - ``%y`` 
+        * - ``%y``
           - Jahr ohne Jahrhundert (00 - 99).
-          - ``%Y`` 
+          - ``%Y``
           - Jahr mit Jahrhundert.
-        * - ``%Z`` 
+        * - ``%Z``
           - Name der Zeitzone, falls diese existiert.
           - ``%%``
           - %. (Gibt ein % aus)
@@ -1140,7 +1138,7 @@ anderen Aufrufen überschrieben werden können.
 
 * ``struct tm * localtime(const time_t *tp)``
 
-    Verwandelt die Kalenderzeit ``*tp`` in Ortszeit. 
+    Verwandelt die Kalenderzeit ``*tp`` in Ortszeit.
 
 
 

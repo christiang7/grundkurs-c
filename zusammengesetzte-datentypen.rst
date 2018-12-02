@@ -18,7 +18,7 @@ Datentyp vergeben werden. Die Syntax lautet dabei wie folgt:
     typedef datentyp neuer_datentyp
 
 Beispielsweise kann mittels ``typedef int integer`` ein "neuer" Datentyp namens
-``integer`` erzeugt werden. Dieser kann anschliessend wie gewohnt bei
+``integer`` erzeugt werden. Dieser kann anschließend wie gewohnt bei
 Deklarationen von Variablen verwendet werden, beispielsweise wird durch
 ``integer num_1;`` eine neue Variable als Integer-Wert deklariert.
 
@@ -52,22 +52,22 @@ folgende Element um ``1`` erhöht.
 
 .. code-block:: c
 
-    typedef enum 
+    typedef enum
     {
         const1, const2, const3, ...
     } enum_name;
 
     # Beispiel:
 
-    typedef enum 
+    typedef enum
     {
         MONTAG = 1, DIENSTAG, MITTWOCH, DONNERSTAG, FREITAG, SAMSTAG, SONNTAG
     } wochentag;
-    
+
 Allgemein müssen die Elemente eines ``enum``-Typs unterschiedliche Werte
 besitzen. Oftmals werden die aufgelisteten Elemente zudem in Großbuchstaben
 geschrieben, um hervorzuheben, dass es sich auch bei ihnen um (ganzzahlige)
-Konstante handelt. 
+Konstante handelt.
 
 Nach der obigen Deklaration ist beispielsweise ``wochentag`` als neuer Datentyp
 verfügbar, der stets durch einen "benannten" ``int``-Wert repräsentiert wird:
@@ -113,7 +113,7 @@ meisten Fällen lassen sich Strukturen folgendermaßen definieren:
 
 .. code-block:: c
 
-    typedef struct 
+    typedef struct
     {
         // ... Deklaration der Komponenten ...
 
@@ -121,7 +121,7 @@ meisten Fällen lassen sich Strukturen folgendermaßen definieren:
 
     // Beispiel:
 
-    typedef struct 
+    typedef struct
     {
         char name[50];
         int laenge;
@@ -138,11 +138,11 @@ vergebene Schlüsselwörter ansprechen:
 
     // Struktur-Objekt definieren:
 
-    gegenstand tisch = 
+    gegenstand tisch =
     {
         "Schreibtisch", 140, 60, 75
     };
-    
+
     // Informationen zum Objekt ausgeben:
 
     printf( "Der Gegenstand \"%s\" ist %d cm hoch.\n", tisch.name, tisch.hoehe );
@@ -184,7 +184,7 @@ Weise auf die Komponenten der Struktur zugreifen:
 .. code-block:: c
 
     // Struktur deklarieren:
-    typedef struct 
+    typedef struct
     {
         int a;
         int b;
@@ -230,12 +230,12 @@ Deklaration einer ``union`` erfolgt nach folgendem Schema:
 
 .. code-block:: c
 
-    typedef union 
+    typedef union
     {
         // ... Deklaration der Komponenten ...
 
     } union_name;
-    
+
     // Beispiel:
 
     typedef union
@@ -284,7 +284,7 @@ aktuellen Wert aufgerufen werden:
         STRING=0, INTEGER=1, FLOAT=2
     } u_type;
 
-    typedef struct 
+    typedef struct
     {
         u_type type;
         cell_value value;

@@ -1,3 +1,6 @@
+
+.. _Editieren und Übersetzen:
+
 Einführung: Editieren und Übersetzen
 =====================================
 
@@ -38,10 +41,10 @@ Das obige Programm enthält folgende Komponenten:
 
 #. Die Funktion ``main()`` startet das Hauptprogramm, das sich innerhalb der
    folgenden geschweiften Klammern befindet. Jedes C-Programm verfügt über
-   eine derartige ``main()``-Funktion. [#VOID]_ 
+   eine derartige ``main()``-Funktion. [#VOID]_
 
 #. Durch den Aufruf der Funktion ``printf()`` wird auf dem Bildschirm der in
-   doppelten Hochkommatas stehende Text ausgegeben. Die Zeichenfolge ``\n``
+   doppelten Hochkommata stehende Text ausgegeben. Die Zeichenfolge ``\n``
    steht dabei als Zeichen für eine neue Zeile. Der Aufruf der Funktion muss,
    wie jede C-Anweisung, mit einem Strichpunkt ``;`` beendet werden.
 
@@ -54,7 +57,7 @@ Shell in den Ordner der Quellcode-Datei und ruft den Compiler ``gcc`` auf:
 
 Durch die Option ``-o hallo`` wird dabei die Output-Datei, d.h. das fertige
 Programm, mit ``hallo`` benannt. Ist der Compilier-Vorgang abgeschlossen, kann
-das neu geschriebene Programm im gleichen Ornder aufgerufen werden:
+das neu geschriebene Programm im gleichen Ordner aufgerufen werden:
 
 .. code-block:: bash
 
@@ -71,7 +74,7 @@ sowie einige nützliche Werkzeuge und Programmiertechniken vorgestellt.
 .. raw:: html
 
     <hr />
-    
+
 .. only:: html
 
     .. rubric:: Anmerkungen:
@@ -80,7 +83,7 @@ sowie einige nützliche Werkzeuge und Programmiertechniken vorgestellt.
     mit den Zeichenfolgen ``/*`` und ``*/`` begrenzt sind. Hierdurch wird eine
     Kompatibilität mit alten C-Compiler-Versionen sicher gestellt. Im obigen
     Tutorium wird hingegen -- nach persönlichem Geschmack -- die
-    ``//``-Variante für (einzeilige) Kommentare verwendet. 
+    ``//``-Variante für (einzeilige) Kommentare verwendet.
 
     Zusätzliche Kommentare der Form ``/* 1. */`` dienen in diesem Tutorium als
     Marker, um im Text auf die jeweiligen Stellen im Quellcode eingehen zu

@@ -32,7 +32,7 @@ Bei einer einfach verketteten Liste hat jedes Element einen Zeiger, der auf
 seinen unmittelbaren Nachfolger zeigt; der Zeiger des letzten Elements zeigt auf
 ``NULL``. Verkettete Listen haben stets einen Zeiger, der auf das erste Element
 ("Head") zeigt, und oftmals auch einen Zeiger auf das letzte Element der Liste
-("Tail"). 
+("Tail").
 
 Die einzelnen Elemente einer verketteten Liste haben den Datentyp ``struct``. Da
 sie allerdings bereits bei ihrer Deklaration einen Pointer auf ein weiteres
@@ -41,7 +41,7 @@ schon im Vorfeld bekannt sein. Man kann dies auf folgendem Weg erreichen:
 
 .. code-block:: c
 
-    struct element_prototype 
+    struct element_prototype
     {
         // Eigentlicher Inhalt (hier: int):
         int value;
@@ -99,7 +99,7 @@ eingefügt werden soll, aktualisiert werden:
     element_type * insert_element_after(element_type *e, int value_new)
     {
         // Zeiger auf neues Element deklarieren:
-        element_type *e_new            
+        element_type *e_new
 
         // Dynamischen Speicherplatz für neues Element reservieren:
         e_new = (element_type *) malloc(sizeof *e_new);
@@ -122,7 +122,7 @@ eingefügt werden soll, aktualisiert werden:
 Der Zeiger des neuen Elements ``e_new`` muss nach dem Einfügen auf die Stelle
 verweisen, auf die der Zeiger des Vorgänger-Elements ``e`` bislang gezeigt hat.
 Dafür muss der Zeiger des Vorgänger-Elements ``e`` nach dem Einfügen auf das
-neue Element ``e_new`` verweisen. 
+neue Element ``e_new`` verweisen.
 
 Um das Nachfolger-Element eines bestimmten Element aus einer einfach verketteten
 Liste zu entfernen, muss einerseits der Zeiger des dieses Elements auf das
@@ -139,7 +139,7 @@ werden:
             return 1;
 
         // Referenzen anpassen:
-        e->next = e->next->next; 
+        e->next = e->next->next;
 
         // Speicherplatz freigeben:
         free(e->next);
@@ -158,7 +158,7 @@ der einzelnen Elemente mit dem Zeigerwert des angegebenen Elements vergleicht:
     element_type * find_previous_element(element_type *e)
     {
         // Temporären und Vorgänger-Zeiger deklarieren:
-        element_type *e_pos;  
+        element_type *e_pos;
         element_type *e_prev;
 
         // Temporären Zeiger auf Head-Element setzen:
@@ -172,7 +172,7 @@ der einzelnen Elemente mit dem Zeigerwert des angegebenen Elements vergleicht:
         }
 
         // Die while-Schleife wird beendet, wenn die Liste komplett durchlaufen
-        // oder das angegebene Element gefunden wurde; in letzterem Fall zeigt 
+        // oder das angegebene Element gefunden wurde; in letzterem Fall zeigt
         // e_pos auf das angegebene Element, e_prev auf dessen Vorgänger.
 
         // Fall 1: Liste wurde erfolglos durchlaufen (Element e nicht in Liste):
@@ -182,7 +182,7 @@ der einzelnen Elemente mit dem Zeigerwert des angegebenen Elements vergleicht:
         // Fall 2: Element e ist erstes Element der Liste:
         else if (e_pos == e0)
             return NULL;
-                
+
         // Fall 3: Element e0 wurde an anderer Stelle gefunden:
         else
             return e_prev;
@@ -197,23 +197,23 @@ folgendermaßen implementiert werden:
     {
         // Vorgänger-Zeiger deklarieren:
         element_type *e_prev;
-        
+
         // Position des Vorgänger-Elements bestimmen:
         e_prev = find_previous_element(e)
 
         // Fehlerkontrolle: Element e nicht in Liste:
         if ( (e_prev == NULL) && e != e0)
             return 1;
-        
+
         // Angegebenes Element wurde gefunden:
 
         if (e == e0)        // Angegebenes Element ist erstes Element der Liste
-        { 
+        {
             e0 = e0->next;      // Neues Head-Element festlegen
         }
         else                    // Angegebenes Element ist nicht erstes Element
         {
-            e_prev->next = e->next; // Vorgänger-Element mit 
+            e_prev->next = e->next; // Vorgänger-Element mit
         }                               // Nachfolger-Element verketten
 
         // Speicherplatz freigeben:
@@ -268,7 +268,7 @@ freigegeben:
         // Alle Elemente der Liste durchlaufen:
         while ( e_pos != NULL )
         {
-            e_tmp = e_pos->next;    
+            e_tmp = e_pos->next;
             free(e_pos);
             e_pos = tmp;
         }
@@ -287,7 +287,7 @@ verketteten Liste identisch:
 
 .. code-block:: c
 
-    struct element_prototype 
+    struct element_prototype
     {
         // Eigentlicher Inhalt (hier: int):
         int value;

@@ -8,7 +8,7 @@ Das Ausgeben und Einlesen von Daten über den Bildschirm erfolgt häufig mittels
 der Funktionen ``printf()`` und ``scanf()``. [#]_ Beide Funktionen sind Teil der
 :ref:`Standard-Bibliothek <C-Standardbibliothek>` :ref:`stdio.h <stdio.h>`, so
 dass diese zu Beginn der Quellcode-Datei mittels ``include <stdio.h>``
-eingebunden werden muss. [#]_ 
+eingebunden werden muss. [#]_
 
 .. Ausgabe auf den Bildschirm
 .. --------------------------
@@ -29,9 +29,9 @@ die angegebene Zeichenkette auf dem Bildschirm aus. Innerhalb der Zeichenketten
 können allerdings Sonderzeichen sowie Platzhalter für beliebige Variablen und
 Werte eingefügt werden.
 
-.. list-table:: 
+.. list-table::
     :name: tab-escape-sequenzen
-    :widths: 20 50 
+    :widths: 20 50
 
     * - Zeichen
       - Bedeutung
@@ -54,7 +54,7 @@ Werte eingefügt werden.
 Die in der obigen Tabelle angegebenen Sonderzeichen werden auch
 "Escape-Sequenzen" genannt, da sie nur mittels des vorangehenden
 Backslash-Zeichens, das ihre sonstige Bedeutung aufhebt, innerhalb einer
-Zeichenkette dargestellt werden könen.
+Zeichenkette dargestellt werden können.
 
 Ein Platzhalter besteht aus einem ``%``-Zeichen, gefolgt von einem oder mehreren
 Zeichen, welche den Typ der auszugebenden Werte oder Variablen angeben und
@@ -62,13 +62,13 @@ gleichzeitig festlegen, wie die Ausgabe formatiert werden soll. Damit kann
 beispielsweise bestimmt werden, wie viele Stellen für einen Wert reserviert
 werden sollen, ob die Ausgabe links- oder rechtsbündig erfolgen soll, und/oder
 ob bei der Ausgabe von Zahlen gegebenenfalls führende Nullen angefügt werden
-sollen. 
+sollen.
 
 .. code-block:: c
 
     // Den Wert Pi auf sechs Nachkommastellen genau ausgeben:
 
-    printf("Der Wert von Pi ist %.6f...\n", 3.141592653589793) 
+    printf("Der Wert von Pi ist %.6f...\n", 3.141592653589793)
     // Ergebnis: Der Wert von Pi ist 3.141593...
 
     // Maximal dreistellige Zahlen rechtsbündig ausgeben:
@@ -107,7 +107,12 @@ automatisch auf die angegebene Genauigkeit gerundet.
 Zur Festlegung des Datentyps einer auszugebenden Variablen gibt es allgemein
 folgende Umwandlungszeichen:
 
-.. list-table:: 
+.. raw:: latex
+
+    \fontsize{10pt}{12pt}
+    \selectfont
+
+.. list-table::
     :name: tab-umwandlungszeichen
     :widths: 10 10 70
 
@@ -117,10 +122,10 @@ folgende Umwandlungszeichen:
     * - ``d, i``
       - ``int``
       - Dezimal-Zahl mit Vorzeichen.
-    * - ``o`` 
+    * - ``o``
       - ``int``
       - Oktal-Zahl ohne Vorzeichen (und ohne führende Null).
-    * - ``x, X`` 
+    * - ``x, X``
       - ``int``
       - Hexadezimal-Zahl ohne Vorzeichen (und ohne führendes ``0x`` oder
         ``0X``), also ``abcdef`` bei ``0x`` oder ``ABCDEF`` bei ``0X``.
@@ -128,23 +133,23 @@ folgende Umwandlungszeichen:
       - ``int``
       - Dezimal-Zahl ohne Vorzeichen.
     * - ``c``
-      - ``int`` 
+      - ``int``
       - Ein einzelnes Zeichen (``unsigned char``).
     * - ``s``
       - ``char *``
-      - Zeichen einer Zeichenkette bis zum Zeichen ``\0``, oder bis zur 
+      - Zeichen einer Zeichenkette bis zum Zeichen ``\0``, oder bis zur
         angegebenen Genauigkeit.
     * - ``f``
       - ``double``
       - Dezimal-Zahl als ``[-]mmm.ddd``, wobei die angegebene Genauigkeit die
         Anzahl der ``d`` festlegt. Die Voreinstellung ist ``6``, bei ``0``
         entfällt der Dezimalpunkt.
-    * - ``e, E`` 
+    * - ``e, E``
       - ``double``
       - Dezimal-Zahl als ``[-]m.dddddde±xx`` oder ``[-]m.ddddddE±xx``, wobei die
         angegebene Genauigkeit die Anzahl der ``d`` festlegt. Die Voreinstellung
         ist ``6``, bei ``0`` entfällt der Dezimalpunkt.
-    * - ``g, G`` 
+    * - ``g, G``
       - ``double``
       - Dezimal-Zahl wie wie ``%e`` oder ``%E``. Wird verwendet, wenn der
         Exponent kleiner als die angegebene Genauigkeit ist; unnötige Nullen am
@@ -156,13 +161,19 @@ folgende Umwandlungszeichen:
       - ``int *``
       - Anzahl der aktuell von ``printf()`` ausgegebenen Zeichen.
 
+.. raw:: latex
+
+    \fontsize{12pt}{14.4pt}
+    \selectfont
+
+
 Die obigen Formatangaben lassen sich durch Steuerzeichen ("flags") zwischen dem
 ``%``- und dem Umwandlungszeichen weiter modifizieren:
 
 * ``Zahl``: Minimale Feldbreite festlegen: Das umgewandelte Argument wird in
   einem Feld ausgegeben, das mindestens so breit ist, bei Bedarf aber auch
   breiter. Hat das umgewandelte Argument weniger Zeichen als die Feldbreite
-  es verlangt, so werden auf der linken Seite Leerzeichen eingefügt. 
+  es verlangt, so werden auf der linken Seite Leerzeichen eingefügt.
 
 * ``.Zahl``: Genauigkeit von Gleitkommazahlen festlegen: Gibt die maximale
   Anzahl von Zeichen an, die nach dem Dezimalpunkt ausgegeben werden
@@ -201,7 +212,7 @@ muss an dieser Stelle ``%%`` geschrieben werden.
 
 Soll über mehrere Zeilen hinweg Text mittels ``printf()`` ausgegeben werden, so
 ist meist es für eine bessere Lesbarkeit empfehlenswert, für jede neue Zeile
-eine eigene ``printf()``-Anweisung zu schreiben. 
+eine eigene ``printf()``-Anweisung zu schreiben.
 
 
 .. index:: puts()
@@ -274,10 +285,10 @@ gibt man folgendes ein:
 
     // Eingegebenen Wert einlesen:
     scanf("%i", &n);
-    
+
 Sobald der Benutzer seine Eingabe mit ``Enter`` bestätigt, wird im obigen
 Beispiel die eingegebene Zahl eingelesen und am Speicherplatz der Variablen
-``n`` hinterlegt. 
+``n`` hinterlegt.
 
 Zum Einlesen von Zeichenketten muss dem Variablennamen kein ``&`` vorangestellt
 werden, da es sich bei einer Zeichenkette um ein :ref:`Array <Felder>` handelt.
@@ -287,7 +298,7 @@ Beim Einlesen von Daten in Felder muss allerdings beachtet werden, dass der
 angegebene Zeiger bereits :ref:`initialisiert <Zeiger-Initialisierung>` wurde.
 Eine simple Methode, um dies sicherzustellen, ist dass eine String-Variable
 nicht mit ``char *mystring;``, sondern beispielsweise mit ``char
-mystring[100];`` definiert wird. 
+mystring[100];`` definiert wird.
 
 .. index:: Whitespace
 .. rubric:: Whitespace als Trennzeichen
@@ -333,7 +344,7 @@ Neues-Zeile-Zeichen) gespeichert wird. Ganze Zeilen, die aus beliebig vielen
 Wörtern bestehen, sollten daher bevorzugt mittels ``gets()`` oder ``fgets()``
 eingelesen werden.
 
-    
+
 .. index:: gets(), fgets()
 .. _gets() und fgets():
 
@@ -347,7 +358,7 @@ Variablen ein:
 
 .. code-block:: c
 
-    int mystring[81]; 
+    int mystring[81];
 
     gets(mystring);
 
@@ -365,7 +376,7 @@ werden, welche die Anzahl der maximal eingelesenen Zeichen beschränkt:
 
 .. code-block:: c
 
-    int mystring[81]; 
+    int mystring[81];
     int n = 80;
 
     fgets(mystring, n, stdin);
@@ -399,17 +410,17 @@ und gesetzt wird, wenn keine explizite Eingabe vom Benutzer erfolgt.
 
 Wird das Zeichen nach einer Umlenkung des Standard-Eingangs (beispielsweise
 mittels :ref:`freopen() <freopen()>`) nicht von der Tastatur, sondern von einer
-Datei eingelesen, so wird so lange jeweils ein einzelnens Zeichen
-zurückgegeben, bis ein Fehler auftritt oder die Funktion auf das Ende des 
+Datei eingelesen, so wird so lange jeweils ein einzelnes Zeichen
+zurückgegeben, bis ein Fehler auftritt oder die Funktion auf das Ende des
 Datenstroms bzw. der Datei trifft; in diesem Fall wird ``EOF`` als Ergebnis
-zurückgegeben. 
+zurückgegeben.
 
 .. getc(), fgetc()
 .. Einlesen aus anderem Stream
 
 .. ungetc() Zeichen zurückstellen
 .. Zweck: Einlesen kann beispielsweise an dieser Stelle beendet werden, Zeichen
-.. wird jedoch nicht verworfen, sondern ist erstes Zeichen beim nächsten Einlesen 
+.. wird jedoch nicht verworfen, sondern ist erstes Zeichen beim nächsten Einlesen
 .. ungetc(ch, stdin)
 
 ... to be continued ...
@@ -451,7 +462,7 @@ zurückgegeben.
 
 .. [#] Streng genommen handelt es sich bei ``getchar()`` nicht um eine Funktion,
     sondern um ein :ref:`Makro <Makro>`. Letztlich wird ``getchar()`` vom
-    Präprozessor durch einen Funktionsaufruf von ``fgetc(stdin)`` ersetzt. 
+    Präprozessor durch einen Funktionsaufruf von ``fgetc(stdin)`` ersetzt.
     Die Funktion ``fputc()`` wird im Abschnitt :ref:`Dateien und Verzeichnisse
     <Dateien und Verzeichnisse>` näher beschrieben.
 

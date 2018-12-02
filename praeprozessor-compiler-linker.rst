@@ -5,7 +5,7 @@ Präprozessor, Compiler und Linker
 =================================
 
 Ein klassischer C-Compiler besteht aus drei Teilen: Einem Präprozessor, dem
-eigentlichen Compiler, und einem Linker: 
+eigentlichen Compiler, und einem Linker:
 
 * Der Präprozessor bereitet einerseits den Quellcode vor (entfernt
   beispielsweise Kommentare und Leerzeilen); andererseits kann er mittels der im
@@ -68,16 +68,16 @@ der zugehörige Wert angegeben:
 .. code-block:: c
 
     #define HALLO "Hallo Welt!"
-    #define PI 3.1415 
+    #define PI 3.1415
 
 Eine Großschreibung der Konstantennamen ist nicht zwingend nötig, ist in der
 Praxis jedoch zum Standard geworden, um Konstanten- von Variablennamen
 unterscheiden zu können. Nicht verwendet werden dürfen allerdings folgende
 Konstanten, die im Präprozessor bereits vordefiniert sind:
 
-* ``__LINE__``: Ganzzahl-Wert der aktuellen Zeilennummer 
+* ``__LINE__``: Ganzzahl-Wert der aktuellen Zeilennummer
 * ``__FILE__``: Zeichenkette mit dem Namen der kompilierten Datei
-* ``__DATE__``: Zeichenkette mit aktuellem Datum 
+* ``__DATE__``: Zeichenkette mit aktuellem Datum
 * ``__TIME__``: Zeichenkette mit aktueller Uhrzeit
 
 Eine Festlegung mittels ``#define`` bleibt allgemein bis zum Ende der
@@ -85,7 +85,7 @@ Quelldatei bestehen. Soll eine erneute Definition einer Konstanten ``NAME``
 erfolgen, so muss die bestehende Definition erst mittels ``#undef NAME``
 rückgängig gemacht werden.
 
-.. index::  Makro 
+.. index::  Makro
 .. _Makro:
 
 Bei der Definition eines Makros mittels ``#define`` wird zunächst der Name des
@@ -149,7 +149,7 @@ Ein entscheidender Vorteil von ``#define``-Anweisungen ist, dass so definierte
 Konstanten oder Makros an beliebigen Stellen im Code eingesetzt werden können
 und zugleich bei Bedarf nur an einer einzigen Stelle im Programm geändert
 werden müssen.
-  
+
 .. _#ifdef:
 .. index:: #if, #ifdef, #ifndef
 
@@ -165,7 +165,7 @@ Quellcode-Bibliotheken mehrfach geladen werden. Beispielsweise kann man in
 einer Header-Datei ``input.h`` gleich zu Beginn prüfen, ob eine Konstante
 ``INPUT_H`` definiert ist. Falls nicht, so kann wird der folgende Code
 berücksichtigt, wobei darin auch die Konstante ``INPUT_H`` mit dem Wert ``1``
-definiert wird: 
+definiert wird:
 
 .. code-block:: c
 
@@ -214,7 +214,7 @@ In diesem Beispiel wird die Ausgabe, die der Präprozessor bei der Verarbeitung
 der Datei ``mycode.c`` erzeugt, in die Datei ``mycode.i`` geschrieben. Mit der
 Option ``-o`` ("output") wird bei ``gcc`` allgemein der Name der Ausgabedatei
 angegeben.
-    
+
 
 .. _Verlinken von Bibliotheken:
 
@@ -239,7 +239,7 @@ aus den Bibliotheken heraus und fügt sie dem zu compilierenden Programm hinzu.
     zwischen dem Makronamen und der öffnenden runden Klammer der
     Argumentenliste vorkommen darf. Der Präprozessor würde ansonsten den
     Makronamen als Namen einer Konstanten interpretieren und den geamten Rest
-    der Zeile als Wert dieser Konstanten interpretieren. 
+    der Zeile als Wert dieser Konstanten interpretieren.
 
 .. [#] Zudem können mit dem zweiten möglichen Makro-Operator ``##`` die Namen
     von zwei oder mehreren übergebenen Argumenten zu einer neuen Bezeichnung

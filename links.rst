@@ -11,7 +11,7 @@ Links
 
 * `Wulf Alex: Einführung in C/C++ <http://www.alex-weingarten.de/skripten/ccplus9.pdf>`_
 
-* `C Tutorial <http://www.c-howto.de/tutorial.html>`_
+* `C Tutorial <http://www.c-howto.de/tutorial/>`_
 
 * `Skript C und C++ von Prof. Mehner (PDF)
   <http://www4.fh-swf.de/de/home/ueber_uns/standorte/is/fb_in/doz_in/profs_in/mehner/downloads_65/programmierungmitc12/index.php>`_
@@ -19,9 +19,9 @@ Links
 * `Introduction to the C Programming Language (PDF)
   <http://www-personal.acfr.usyd.edu.au/tbailey/ctext/ctext.pdf>`_
 
-* `Learning C -- The Hard Way (en, Online-Ebook) <http://c.learncodethehardway.org/book/>`_
-
 * `Beej's Guide to C Programming (en) <http://beej.us/guide/bgc/>`_
+
+.. * `Learning C -- The Hard Way (en, Online-Ebook) <https://c.learncodethehardway.org/book/>`_
 
 .. rubric:: Handbücher, Nachschlagewerke
 
@@ -37,21 +37,21 @@ Links
 
 * `C Standard Library with Code Examples 1 <http://www.cplusplus.com/reference/clibrary/>`_
 
-* `C Standard Library with Code Examples 2 <http://code-reference.com/c>`_
+* `C Standard Library with Code Examples 2 <https://code-reference.com/c>`_
 
-* `The GNU C Library <http://www.linuxselfhelp.com/gnu/glibc/html_chapter/libc_toc.html>`_
+.. * `The GNU C Library <http://www.linuxselfhelp.com/gnu/glibc/html_chapter/libc_toc.html>`_
 
 .. * `Arduino Library with Code Examples <http://code-reference.com/arduino>`
 
 .. rubric:: Spezielle Themen
 
-* `Numerical Recipes in C <http://e-maxx.ru/bookz/files/numerical_recipes.pdf>`_
+.. * `Numerical Recipes in C <http://e-maxx.ru/bookz/files/numerical_recipes.pdf>`_
 
-* `Writing Programs with NCURSES <http://frank.harvard.edu/~coldwell/ncurses/ncurses-intro.html>`_
+.. * `Writing Programs with NCURSES <http://frank.harvard.edu/~coldwell/ncurses/ncurses-intro.html>`_
 
 * `NCURSES Programming HOWTO <http://www.tldp.org/HOWTO/NCURSES-Programming-HOWTO/index.html>`_
 
-* `Code-Dokumentation mittels Doxygen <http://www2.informatik.hu-berlin.de/swt/projekt98/werkzeuge/doxygen/Doxygen.html>`_
+* `Code-Dokumentation mittels Doxygen <https://www2.informatik.hu-berlin.de/swt/projekt98/werkzeuge/doxygen/Doxygen.html>`_
 
 ..  * `Beispieldateien: Dokumentieren mit doxygen <http://www.macht-publik.de/ccpp/bsp-doxygen.html>`_
 
@@ -77,7 +77,7 @@ Links
 .. only:: latex
 
     .. rubric:: Quellen
-    
+
 Die Hauptquellen für diesen C-Grundkurs sind [Oesch2008]_, [Lopo2000]_ und
 [Graefe2010]_; zudem wurden die unter der Rubrik :ref:`Links <C-Links>`
 aufgeführten Seiten sowie die in der folgenden Quellenliste aufgeführten Bücher
@@ -87,7 +87,7 @@ und Skripte genutzt.
 .. raw:: html
 
     <hr />
-    
+
 
 .. only:: html
 
@@ -119,8 +119,8 @@ und Skripte genutzt.
 
 .. [Oesch2008] Ivo Oesch: `Eine Einführung in die Programmiersprache C und die
     Grundlagen der Informatik
-    <https://www.c-plusplus.net/tuts/c/c_Informatik_und_C_Skript_Release_2_4_IOE.pdf>`_.
-    Skript Version 2.4, 2008. 
+    <https://web.ti.bfh.ch/fileadmin/home/osi1/Informatik_und_C_Skript_Release_2_4_IOE.pdf>`_.
+    Skript Version 2.4, 2008.
 
 .. [Wolf2009] Jürgen Wolf: `C von A bis Z
     <http://openbook.rheinwerk-verlag.de/c_von_a_bis_z/>`_. Rheinwerk Verlag, 2009.

@@ -24,7 +24,7 @@ Kennzeichnung vor den Namen der Zeigervariablen ein ``*`` geschrieben wird:
     int *n;
 
 Es dürfen wiederum mehrere Zeiger auf einmal definiert werden; hierzu werden die
-einzelnen Namen der Zeigervariablen durch Kommatas getrennt und die Definition mit
+einzelnen Namen der Zeigervariablen durch Kommata getrennt und die Definition mit
 einem abschließenden Strichpunkt beendet.
 
 .. code-block:: c
@@ -34,11 +34,12 @@ einem abschließenden Strichpunkt beendet.
 
 .. index:: Adressoperator
 .. _Adressoperator:
+.. _Adress-Operator:
 
-.. rubric:: Der Adressoperator ``&``
+.. rubric:: Der Adress-Operator ``&``
 
 Um einer Zeigervariablen einen Inhalt, d.h. die eine gültige Speicheradresse
-zuzuweisen, wird der so genannte Adressoperator ``&`` verwendet. Wird dieser
+zuzuweisen, wird der so genannte Adress-Operator ``&`` verwendet. Wird dieser
 Operator vor eine beliebige Variable geschrieben, so gibt er die zugehörige
 Speicheradresse aus. Diese kann wie gewöhnlich in der Variablen auf der linken
 Seite des ``=``-Zeichens gespeichert werden:
@@ -61,13 +62,14 @@ zugewiesen. [#]_
 
 .. index:: Inhaltsoperator
 .. _Inhaltsoperator:
+.. _Inhalts-Operator:
 
-.. rubric:: Der Inhaltsoperator ``*``
+.. rubric:: Der Inhalts-Operator ``*``
 
 Möchte man den Zeiger wiederum dazu nutzen, um auf den Inhalt der
-Speicheradresse zuzugreifen, kann der sogenannte Inhaltsoperator ``*`` verwendet
+Speicheradresse zuzugreifen, kann der sogenannte Inhalts-Operator ``*`` verwendet
 werden. Angewendet auf eine bereits deklarierte Variable gibt dieser den zur
-Speicheradresse gehörigen Inhalt aus. 
+Speicheradresse gehörigen Inhalt aus.
 
 Erzeugt man beispielsweise einen Zeiger ``b``, der auf eine Variable ``a``
 zeigt, so ist ``*b`` identisch mit dem Wert von ``a``:
@@ -82,10 +84,10 @@ zeigt, so ist ``*b`` identisch mit dem Wert von ``a``:
 
     printf("Die Adresse von a ist %u!\n" ,  b);
     printf("Der Wert    von a ist %i!\n" , *b);
-    
+
 Das Symbol ``*`` hat in C somit zwei grundlegend verschiedene Verwendungsarten.
 Einerseits ist es nötig um bei der Deklaration Zeigervariablen von normalen
-Variablen zu unterscheiden. Im eigenlichen Programm bezeichnet ``*``
+Variablen zu unterscheiden. Im eigentlichen Programm bezeichnet ``*``
 andererseits einen Operator, der es ermöglicht den Inhalt der in der
 Zeigervariablen abgelegten Speicherstelle abzufragen.
 
@@ -94,7 +96,7 @@ Zeigervariablen abgelegten Speicherstelle abzufragen.
 Der ``*``-Operator kann auch für Wertzuweisungen, also auf der linken Seite des
 Istgleich-Zeichens benutzt werden. Hierbei muss der Programmierer allerdings
 unbedingt darauf achten, dass der jeweilige Zeiger bereits initiiert (nicht
-``NULL``) ist, sondern auf eine gültige Speicherstelle zeigt: 
+``NULL``) ist, sondern auf eine gültige Speicherstelle zeigt:
 
 .. code-block:: c
 
@@ -125,7 +127,7 @@ Felder
 ------
 
 Als Feld ("Array") bezeichnet man eine Zusammenfassung von mehreren Variablen
-gleichen Datentyps zu einem gemeinsamen Speicherbereich. 
+gleichen Datentyps zu einem gemeinsamen Speicherbereich.
 
 Bei der Definition eines Arrays muss einerseits der im Array zu speichernde
 Datentyp angegeben werden, andererseits wird zusätzlich in eckigen Klammern die
@@ -135,7 +137,7 @@ beispielsweise:
 
 .. code-block:: c
 
-    int numbers[10]; 
+    int numbers[10];
 
     // Definition und Zuweisung zugleich:
     int other_numbers[5] = { 10, 11, 12, 13, 14 };
@@ -149,7 +151,7 @@ gleichartiger Datei über eine einzige Variable (den Namen des Arrays) anspreche
 zu können. Auf die einzelnen Elemente eines Feldes kann nach im eigentlichen
 Programm mittels des so genannten Selektionsoperators ``[]`` zugegriffen werden.
 Zwischen die eckigen Klammern wird dabei ein (ganzzahliger) Laufindex ``i``
-geschrieben. 
+geschrieben.
 
 Hat ein Array insgesamt ``n`` Elemente, so kann der Laufindex ``i`` alle
 ganzzahligen Werte zwischen ``0`` und ``n-1`` annehmen. Das erste Element hat
@@ -159,7 +161,7 @@ ausgelesen oder durch einen anderen ersetzt werden:
 
 .. code-block:: c
 
-    int numbers[5]; 
+    int numbers[5];
 
     numbers[0] =  3;
     numbers[1] =  5;
@@ -188,7 +190,7 @@ folgendermaßen deklariert werden: [#]_
 .. code-block:: c
 
     // Tabelle mit 3 Zeilen und je 4 Spalten deklarieren:
-    int zahlentabelle[3][4];   
+    int zahlentabelle[3][4];
 
 Auch in diesem Fall laufen die Indexwerte bei :math:`n` Einträgen nicht von
 :math:`1` bis :math:`n`, sondern von :math:`0` bis :math:`n-1`. Der erste
@@ -210,29 +212,29 @@ erste Element des Feldes anstelle von ``&numbers[0]`` auch die Kurzform
 
 Da alle Elemente eines Arrays den gleichen Datentyp haben und somit gleich viel
 Speicherplatz belegen, unterscheiden sich die einzelnen Speicheradressen der
-Elemente um die Länge des Datentyps, beispielsweise um ``sizeof(int)`` für ein
-Array mit ``int``-Werten oder ``sizeof(float)`` für ein Array mit
-``float``-Werten. Ausgehend vom ersten Elemnent eines Arrays erhält man somit
+Elemente um die Länge des Datentyps, beispielsweise um ``sizeof (int)`` für ein
+Array mit ``int``-Werten oder ``sizeof (float)`` für ein Array mit
+``float``-Werten. Ausgehend vom ersten Element eines Arrays erhält man somit
 die weiteren Elemente des Feldes, indem man den Wert des Zeigers um das
 :math:`1, 2, \ldots, n-1`-fache der Länge des Datentyps erhöht:
 
 .. code-block:: c
 
-   int numbers[10]; 
+   int numbers[10];
    int *numpointer;
 
    // Pointer auf erstes Element des Arrays:
    numpointer = &numbers;                       // oder: &numbers[0]
 
    // Pointer auf zweites Element des Arrays:
-   numpointer = &numbers + sizeof(int);         // oder: &numbers[1]
+   numpointer = &numbers + sizeof (int);         // oder: &numbers[1]
 
    // Pointer auf drittes Element des Arrays:
-   numpointer = &numbers + 2 * sizeof(int);     // oder: &numbers[2]
+   numpointer = &numbers + 2 * sizeof (int);     // oder: &numbers[2]
 
 Beim Durchlaufen eines Arrays ist eine Erhöhung des Zeigers in obiger Form auch
 mit dem :ref:`Inkrement-Operator <Inkrement und Dekrement>` möglich: Es kann
-also auch ``numpointer++`` statt ``numpointer = numpointer + sizeof(int)``
+also auch ``numpointer++`` statt ``numpointer = numpointer + sizeof (int)``
 geschrieben werden, um den Zeiger auf das jeweils nächste Element des Feldes zu
 bewegen; dies wird beispielsweise in :ref:`for <Schleifen>`-Schleifen genutzt.
 Ebenso kann das Feld mittels ``numpointer--`` schrittweise rückwärts
@@ -270,7 +272,7 @@ Zeichenkette ``"Hallo!"`` einem Array, das aus ``'H'``, ``'a'``, ``'l'``,
 ``'l'``, ``'o'``, ``'!'`` und dem Zeichen ``'\0'`` besteht. Dieser Unterschied
 besteht allgemein zwischen Zeichenketten, die mit doppelten Hochkommatas
 geschrieben werden, und einzelnen Zeichen, die in einfachen Hochkommatas
-dargestellt werden. 
+dargestellt werden.
 
 Die Deklaration einer Zeichenkette entspricht der Deklaration eines
 gewöhnlichen Feldes:
@@ -344,6 +346,12 @@ c;`` der Variablen ``c`` mittels ``c = 120`` ein numerischer Wert zugewiesen, so
 liefert die Ausgabe von ``printf("%c\n", c);`` den zur Zahl ``120`` gehörenden
 ACII-Code, also ``x``.
 
+.. raw:: latex
+
+    \fontsize{10pt}{12pt}
+    \selectfont
+
+
 .. index:: ASCII-Tabelle
 .. _tab-ascii:
 
@@ -383,6 +391,12 @@ ACII-Code, also ``x``.
 | 15  | ``SI``  | 31  | ``US``  | 47  | ``/``  | 63  | ``?`` | 79  | ``O`` | 95  | ``_`` | 111 | ``o`` | 127 | ``DEL`` |
 +-----+---------+-----+---------+-----+--------+-----+-------+-----+-------+-----+-------+-----+-------+-----+---------+
 
+.. raw:: latex
+
+    \fontsize{12pt}{14.4pt}
+    \selectfont
+
+
 Die zu den Zahlen ``0`` bis ``127`` gehörenden Zeichen sind bei fast allen
 Zeichensätzen identisch. Da der ASCII-Zeichensatz allerdings auf die englische
 Sprache ausgerichtet ist und damit keine Unterstützung für Zeichen anderer
@@ -395,9 +409,9 @@ Darstellung dieser Zeichen ein Backslash-Zeichen ``\`` erforderlich ist, das die
 eigentliche Bedeutung des darauf folgenden Zeichens aufhebt. Einige wichtige
 dieser Sonderzeichen sind in der folgenden Tabelle aufgelistet.
 
-.. list-table:: 
+.. list-table::
     :name: tab-sonderzeichen
-    :widths: 20 50 
+    :widths: 20 50
 
     * - Zeichen
       - Bedeutung
@@ -416,7 +430,7 @@ dieser Sonderzeichen sind in der folgenden Tabelle aufgelistet.
 
 Eine weitere Escape-Sequenz ist das Zeichen ``'\0'`` als Endmarkierung einer
 Zeichenkette, das verständlicherweise jedoch nicht innerhalb einer
-Zeichenketten stehen darf. 
+Zeichenketten stehen darf.
 
 
 
@@ -441,12 +455,12 @@ Zeichenketten stehen darf.
 .. [#] Der Grund für die Verwendung eines ``NULL``-Zeigers (einer in der Datei
     ``stddef.h`` definierten Konstanten mit dem Wert :math:`0`) liegt darin,
     dass eine binär dargestellte Null in C niemals als Speicheradresse verwendet
-    wird. 
+    wird.
 
     Manchmal wird der ``NULL``-Pointer von :ref:`Funktionen <Funktionen>`, die
     gewöhnlich einen bestimmten Zeiger als Ergebnis liefern, zur Anzeige einer
     erfolglosen Aktion verwendet. Liegt kein Fehler vor, so ist der Rückgabewert
-    die Adresse eines Speicherobjektes und somit von ``0`` verschieden. 
+    die Adresse eines Speicherobjektes und somit von ``0`` verschieden.
 
 .. [#] Die Größe von Feldern kann nach der Deklaration nicht mehr verändert
     werden. Somit muss das Feld ausreichend groß gewählt werden, um alle zu
@@ -461,7 +475,7 @@ Zeichenketten stehen darf.
     unmittelbar möglich; dabei werden die einzelnen "Zeilen" für eine bessere
     Lesbarkeit in geschweifte Klammern gesetzt. Beispielsweise kann gleich bei
     der Definition ``int zahlentabelle[3][4] = { {3,4,1,5}, {8,5,6,9},
-    {4,7,0,3} };`` geschrieben werden. 
+    {4,7,0,3} };`` geschrieben werden.
 
 .. [#] Legt man bei der Deklaration eines Feldes seine Groesse nicht fest, um
     diese erst zur Laufzeit mittels :ref:`malloc() <Dynamische

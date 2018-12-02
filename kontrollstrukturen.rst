@@ -17,17 +17,17 @@ mit denen sich der Ablauf eine C-Programms steuern lässt.
 Mit Hilfe des Schlüsselworts ``if`` kann an einer beliebigen Stelle im Programm
 eine Bedingung formuliert werden, so dass die Anweisung(en) im unmittelbar
 folgenden Code-Block nur dann ausgeführt werden, sofern die Bedingung einen
-wahren Wert (ungleich Null) ergibt. 
+wahren Wert (ungleich Null) ergibt.
 
 Eine ``if``-Anweisung ist also folgendermaßen aufgebaut:
 
 .. code-block:: c
 
-    if (Bedingung) 
+    if (Bedingung)
     {
         Anweisungen
     }
-    
+
 In den runden Klammern können mittels der logischen Verknüpfungsoperatoren
 ``and`` beziehungsweise ``or`` mehrere Teilbedingungen zu einer einzigen
 Bedingung zusammengefügt werden. Bei einer einzeiligen Anweisung können die
@@ -42,29 +42,29 @@ Alternativen auswählen möchte.
 
 .. code-block:: c
 
-    if (Bedingung) 
+    if (Bedingung)
     {
         Anweisungen
     }
-    else 
+    else
     {
         Anweisungen
     }
-    
+
 Der Vorteil einer ``if-else``-Bedingung gegenüber der Verwendung zweier
 ``if``-Anweisungen besteht darin, dass nur einmalig eine Bedingung getestet wird
-und das Programm somit schneller ausgeführt werden kann. 
+und das Programm somit schneller ausgeführt werden kann.
 
 .. index:: else if
 
-Soll neben der ``if``-Bedingungung eine (oder mehrere) weitere Bedingung
+Soll neben der ``if``-Bedingung eine (oder mehrere) weitere Bedingung
 getestet werden, so kann dies mittels des kombinierten Schlüsselworts ``else
 if`` geschehen. Die ``else if``-Anweisungen werden nur dann ausgeführt, wenn die
 ``if``-Bedingung falsch und die ``elif``-Bedingung wahr ist.
 
 .. code-block:: c
 
-    if (Bedingung_1) 
+    if (Bedingung_1)
     {
         Anweisungen
     }
@@ -72,9 +72,9 @@ if`` geschehen. Die ``else if``-Anweisungen werden nur dann ausgeführt, wenn di
     {
         Anweisungen
     }
-    
+
 Allgemein können in einer ``if``-Struktur mehrere ``else if``-Bedingungen, aber
-nur ein ``else``-Block vorkommen. 
+nur ein ``else``-Block vorkommen.
 
 
 .. index:: switch, case, default
@@ -130,7 +130,7 @@ Die Syntax dazu lautet:
             Anweisungen
 
         ...
-    } 
+    }
 
 In diesem Fall werden die bei ``case const_3`` angegebenen Anweisungen auch
 aufgerufen, wenn die Vergleiche ``case const_1`` oder ``case const_2``
@@ -160,11 +160,11 @@ Schritte ausgeführt:
   üblicherweise eine Zuweisung, die eine Zählvariable auf einen bestimmten Wert
   setzt.
 
-* Als nächstes wird der Bedingungs-Ausdruck wird ausgewertet. Dieser ist
+* Als nächstes wird der Bedingungs-Ausdruck ausgewertet. Dieser ist
   normalerweise ein relationaler Ausdruck (Vergleich).
 
   Wenn die Bedingung falsch ist, so wird die ``for``-Schleife beendet, und das
-  Programm springt zur nächsten Anweisung außerhalb der Schleife. 
+  Programm springt zur nächsten Anweisung außerhalb der Schleife.
 
   Wenn die Bedingung wahr ist, so werden die im folgenden
   Block angegebenen Anweisung(en) ausgeführt.
@@ -219,16 +219,16 @@ ausgeführt wird.
 Häufig werden ``while``-Schleifen als Endlos-Schleifen verwendet, die einen
 (zunächst) wahren Ausdruck als Bedingung verwenden. Unter einer bestimmten
 Voraussetzung wird dann mittels einer ``if``-Anweisung innerhalb des
-Schleifenkörpers entweder der Bedingungsaustruck auf den Wert Null gesetzt oder
-die Schleife mittels ``break`` beendet.  
+Schleifenblocks entweder der Bedingungsausdruck auf den Wert Null gesetzt oder
+die Schleife mittels ``break`` beendet.
 
 .. _do-while:
-    
+
 Soll eine gewöhnliche ``while``-Schleife, unabhängig von ihrer Bedingung,
 mindestens einmal ausgeführt werden, so wird in selteneren Fällen
 eine ``do-while``-Schleife eingesetzt. Eines solche Schleife ist folgendermaßen
 aufgebaut:
-    
+
 .. code-block:: c
 
     do

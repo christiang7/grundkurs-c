@@ -43,7 +43,7 @@ eine Funktion von mehreren Dateien aus benutzt werden soll.
 ..  .. code-block:: c
 
     ..  extern int globalvar;   // Reserviert keinen Speicherplatz;
-    ..  extern float f;         // die Variable ist in einem anderen Modul 
+    ..  extern float f;         // die Variable ist in einem anderen Modul
 
 ..  Üblicherweise wird das Schlüsselwort extern in Headerdateien (.h) verwendet und
 ..  nicht innerhalb der Implementationsdatei (.c).
@@ -55,7 +55,7 @@ eine Funktion von mehreren Dateien aus benutzt werden soll.
 
 ..  .. code-block:: c
 
-    ..  extern int f1(int a, int b) // Funktion ist woanders definiert 
+    ..  extern int f1(int a, int b) // Funktion ist woanders definiert
 
 
 ..  Wird eine Header-Datei doppelt oder mehrfach in ein Modul eingebunden ( direkt

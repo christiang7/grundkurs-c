@@ -5,15 +5,10 @@ Grundkurs C
 
 .. only:: html
 
-    .. sidebar:: Hinweis
-
-        Eine Druckversion dieser Seite ist als :download:`PDF-Dokument
-        <grundkurs-c.pdf>` verfügbar.
-
     C ist wohl eine der wichtigsten Programmiersprachen überhaupt. Kaum ein
     Programmierer wird umhin kommen, sich mit dieser Programmiersprache auseinander
     zu setzen, da sie die Grundlage für viele Interpretersprachen und/oder andere
-    darauf aufbauende Sprachen darstellt. 
+    darauf aufbauende Sprachen darstellt.
 
     Die Programmierung mag in C mit mehr Aufwand verbunden sein als in anderen
     Sprachen, dafür laufen die fertigen Programme meist "flüssiger", da sie die
@@ -22,6 +17,21 @@ Grundkurs C
 
     In diesem Tutorial sind einige Grundlagen, Tipps und Tricks rund um
     C-Programmierung nach dem C-99 beziehungsweise C-11-Standard aufgeführt.
+
+.. only:: html
+
+    .. sidebar:: Hinweis
+
+        Dieses Projekt kann als Quellcode von `GitLab
+        <https://www.gitlab.com/grund-wissen/grundkurs-c>`_
+        heruntergeladen werden.
+
+        Offline-Version:
+
+        :download:`(PDF) Grundkurs C
+        <../../../build/informatik/c/latex/grundkurs-c.pdf>`
+
+
 
 .. toctree::
     :maxdepth: 2

@@ -26,7 +26,7 @@ bisweilen auch "Stream" genannt, definiert werden:
 
 .. code-block:: c
 
-    #include <stdio.h> 
+    #include <stdio.h>
 
     FILE *fp;
 
@@ -36,15 +36,15 @@ ein Zeichen, das den Zugriffsmodus auf die Datei angibt:
 
 * ``"r"``: Textdatei zum Lesen öffnen
 * ``"w"``: Textdatei zum Schreiben neu erzeugen (gegebenenfalls alten Inhalt
-  wegwerfen) 
-* ``"a"``: Text anfügen; Datei zum Schreiben am Dateiende öffnen oder erzeugen 
-* ``"r+"``: Textdatei zum Ändern öffnen (Lesen und Schreiben) 
-* ``"w+"``: Textdatei zum Ändern erzeugen (gegebenenfalls alten Inhalt wegwerfen) 
+  wegwerfen)
+* ``"a"``: Text anfügen; Datei zum Schreiben am Dateiende öffnen oder erzeugen
+* ``"r+"``: Textdatei zum Ändern öffnen (Lesen und Schreiben)
+* ``"w+"``: Textdatei zum Ändern erzeugen (gegebenenfalls alten Inhalt wegwerfen)
 * ``"a+"``: Datei neu erzeugen oder zum Ändern öffnen und Text anfügen
   (Schreiben am Ende)
 
 Als Ergebnis gibt ``fopen()`` einen File-Pointer auf die Datei zurück, oder
-``NULL``, falls beim Öffnen ein Fehler aufgetreten ist. 
+``NULL``, falls beim Öffnen ein Fehler aufgetreten ist.
 
 .. code-block:: c
 
@@ -79,7 +79,7 @@ nutzen:
         if (fp == NULL)
         {
             result = 0;
-        } 
+        }
         else
         {
             result = 1;
@@ -110,7 +110,7 @@ Funktionen sehr ähnlich.
 .. rubric:: ``fprintf()`` -- Daten formatiert schreiben
 
 Mit ``fprintf()`` können normale Zeichenketten, Sonderzeichen und Werte von
-Variablen mittels Platzhaltern in formattierter Weise in eine Datei geschrieben
+Variablen mittels Platzhaltern in formatierter Weise in eine Datei geschrieben
 werden. Die Syntax entspricht dabei derjenigen von :ref:`printf() <printf()>`,
 wobei als erstes Argument der Name eines File-Pointers angegeben werden muss:
 
@@ -136,7 +136,7 @@ getrennt werden. Am Ende des Schreibvorgangs muss die Datei wieder mittels
 
 Mit ``fputs()`` können normale Zeichenketten in eine Datei geschrieben werden.
 Sonderzeichen in den Zeichenketten sind erlaubt, ein Ersetzen von Platzhaltern
-durch Werte von Variablen hingegen nicht. 
+durch Werte von Variablen hingegen nicht.
 
 .. rubric:: ``fputc()`` -- Einzelne Zeichen schreiben
 
@@ -160,9 +160,9 @@ Funktionen zum Einlesen von Daten vom Bildschirm.
 
 .. rubric:: ``fgetc()`` -- Daten zeichenweise einlesen
 
-Die Funktion ``fgetc()`` liest ein einzelnens Zeichen aus einer Datei ein und
+Die Funktion ``fgetc()`` liest ein einzelnes Zeichen aus einer Datei ein und
 gibt es als ``int``-Wert zurück. Vor Verwendung von ``fgetc()`` muss wiederum
-zunächst ein File-Pointer mittels :ref:`fopen() <fopen()>` bereitgesetellt
+zunächst ein File-Pointer mittels :ref:`fopen() <fopen()>` bereitgestellt
 werden:
 
 Die Funktion ``fgetc()`` wird häufig in Verbindung mit einer ``while``-Schleife
@@ -194,7 +194,7 @@ gibt in diesem Fall einen Wert ungleich Null zurück.
 
 .. while ( ( grade = getchar() ) != EOF )
 
-..  
+..
     fputc(int c, FILE *stream) schreibt das als unsigned char interpretierte
     Zeichen ``c`` in den angegebenen Stream.
     Bei einer fehlerfreien Ausfuehrung liefert es das Zeichen ``c`` als
@@ -214,6 +214,6 @@ gibt in diesem Fall einen Wert ungleich Null zurück.
     bisweilen auch als "Filter" bezeichnet. Derartige Programme können unter
     Linux mittels des :ref:`Pipe-Zeichens <gwl:Pipelines>` verbunden werden,
     beispielsweise kann so in einer Shell ``programm_1 | programm_2 |
-    programm_3`` eingegeben werden. 
+    programm_3`` eingegeben werden.
 
 

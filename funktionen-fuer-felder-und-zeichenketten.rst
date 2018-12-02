@@ -24,7 +24,7 @@ Bei der Verwendung dieser Funktionen kann :ref:`valgrind <valgrind>` als
 "Debugger" für dynamischen Speicherplatz eingesetzt werden.
 
 .. index:: malloc(), free()
-.. _malloc():
+.. .. _malloc():
 
 .. rubric:: Die Funktion ``malloc()``
 
@@ -41,7 +41,7 @@ Um beispielsweise einen dynamischen Speicherplatz für ein Array mit :math:`50`
 
 .. code-block:: c
 
-    numbers = (int *) malloc(50 * sizeof(int));
+    numbers = (int *) malloc(50 * sizeof (int));
 
 An die Funktion ``malloc()`` wird allgemein die zu reservierende Speichergröße
 in Bytes als Argument übergeben; für beispielsweise :math:`50` Werte vom
@@ -58,7 +58,7 @@ Speicher nach dem Gebrauch wieder freigegeben wird und somit kein Speicherleck
 entsteht.
 
 .. index:: calloc()
-.. _calloc():
+.. .. _calloc():
 
 .. rubric:: Die Funktion ``calloc()``
 
@@ -78,14 +78,14 @@ wird, manuell mittels ``free()`` wieder freigegeben werden.
 
 
 .. index:: realloc()
-.. _realloc():
+.. .. _realloc():
 
 .. rubric:: Die Funktion ``realloc()``
 
 Mit der Funktion ``realloc()`` kann ein mit ``malloc()`` oder ``calloc()``
 reservierter Speicherbereich nachträglich in seiner Größe verändert werden.
 
-Als erstes Argument gibt man bei ``realloc()`` einen Zeicger auf einen bereits
+Als erstes Argument gibt man bei ``realloc()`` einen Zeiger auf einen bereits
 existierenden dynamischen Speicherbereich an, als zweites die gewünschte neue
 Größe des Speicherbereichs. Kann der angeforderte Speicher nicht an der
 bisherigen Adresse angelegt werden, weil dort kein ausreichend großer
@@ -95,7 +95,7 @@ genügend Speicher frei ist.
 
 .. code-block:: c
 
-    numbers = (int *) realloc(numbers, 100 * sizeof(int));
+    numbers = (int *) realloc(numbers, 100 * sizeof (int));
 
 Als Ergebnis gibt die Funktion ``realloc()`` ebenfalls einen ``void *``-Zeiger
 auf den reservierten Speicherbereich zurück, wenn die Speicherreservierung
@@ -115,7 +115,7 @@ In C kann man den Inhalt zweier Felder nicht direkt vergleichen, es kann hierfü
 also nicht ``array_1 == array_2`` geschrieben werden. Bei diesem Test würden
 lediglich, da der Name eines Feldes auf das erste im Feld gespeicherte Element
 verweist, die Speicheradressen zweier Variablen verglichen werden, jedoch nicht
-deren Inhalt. 
+deren Inhalt.
 
 Für einen inhaltlichen Vergleich müssen alle Einzelelemente der Felder
 miteinander verglichen werden. Dies kann automatisch mit der Funktion
@@ -200,12 +200,12 @@ ausreichend grossen Zielstring geachtet werden. Als Alternativ kann die Funktion
 an anzuhängenden Zeichen übergeben wird.
 
 
-..  
+..
     Umwandlungsfunktionen
-    
+
     atoi aus stdlib: Wandelt Zahlen-Strings in Zahlen um; sprintf() kann
     u.a. Zahlen in Text umwandeln
-    
+
     mynumber = atoi("2463");
     sprintf(mystring, "%i", mynumber);
 
